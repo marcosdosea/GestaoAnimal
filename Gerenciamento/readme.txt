@@ -1,0 +1,1 @@
+[Pasta destinada aos futuros artefatos que serão desenvolvidos na disciplina de gerenciamento de projetos e engenharia de software]
