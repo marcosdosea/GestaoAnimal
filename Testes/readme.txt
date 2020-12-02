@@ -1,0 +1,1 @@
+[Pasta destinada aos futuros artefatos que serão desenvolvidos na disciplina de qualidade de software]
