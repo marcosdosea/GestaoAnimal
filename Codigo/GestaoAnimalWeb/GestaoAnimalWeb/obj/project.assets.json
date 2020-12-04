@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\erick\\.nuget\\packages\\": {}
+    "C:\\Users\\GCaio\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\documents\\GestaoAnimal\\Codigo\\GestaoAnimalWeb\\GestaoAnimalWeb\\GestaoAnimalWeb.csproj",
+      "projectUniqueName": "E:\\Bibliotecas\\Documentos\\UFS\\6 Periodo\\ES II\\Projeto v.ES2\\GestaoAnimal\\Codigo\\GestaoAnimalWeb\\GestaoAnimalWeb\\GestaoAnimalWeb.csproj",
       "projectName": "GestaoAnimalWeb",
-      "projectPath": "E:\\documents\\GestaoAnimal\\Codigo\\GestaoAnimalWeb\\GestaoAnimalWeb\\GestaoAnimalWeb.csproj",
-      "packagesPath": "C:\\Users\\erick\\.nuget\\packages\\",
-      "outputPath": "E:\\documents\\GestaoAnimal\\Codigo\\GestaoAnimalWeb\\GestaoAnimalWeb\\obj\\",
+      "projectPath": "E:\\Bibliotecas\\Documentos\\UFS\\6 Periodo\\ES II\\Projeto v.ES2\\GestaoAnimal\\Codigo\\GestaoAnimalWeb\\GestaoAnimalWeb\\GestaoAnimalWeb.csproj",
+      "packagesPath": "C:\\Users\\GCaio\\.nuget\\packages\\",
+      "outputPath": "E:\\Bibliotecas\\Documentos\\UFS\\6 Periodo\\ES II\\Projeto v.ES2\\GestaoAnimal\\Codigo\\GestaoAnimalWeb\\GestaoAnimalWeb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\erick\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\GCaio\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

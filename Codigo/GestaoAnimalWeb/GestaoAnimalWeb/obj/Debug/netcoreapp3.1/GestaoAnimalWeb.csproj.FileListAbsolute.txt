@@ -35,3 +35,40 @@ E:\documents\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netco
 E:\documents\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.pdb
 E:\documents\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.genruntimeconfig.cache
 E:\documents\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.csproj.CopyComplete
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\bin\Debug\netcoreapp3.1\appsettings.Development.json
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\bin\Debug\netcoreapp3.1\appsettings.json
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\bin\Debug\netcoreapp3.1\GestaoAnimalWeb.exe
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\bin\Debug\netcoreapp3.1\GestaoAnimalWeb.deps.json
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\bin\Debug\netcoreapp3.1\GestaoAnimalWeb.runtimeconfig.json
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\bin\Debug\netcoreapp3.1\GestaoAnimalWeb.runtimeconfig.dev.json
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\bin\Debug\netcoreapp3.1\GestaoAnimalWeb.dll
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\bin\Debug\netcoreapp3.1\GestaoAnimalWeb.pdb
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\bin\Debug\netcoreapp3.1\GestaoAnimalWeb.Views.dll
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\bin\Debug\netcoreapp3.1\GestaoAnimalWeb.Views.pdb
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.csprojAssemblyReference.cache
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.AssemblyInfoInputs.cache
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.AssemblyInfo.cs
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.csproj.CoreCompileInputs.cache
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.MvcApplicationPartsAssemblyInfo.cache
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.RazorAssemblyInfo.cache
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.RazorAssemblyInfo.cs
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\staticwebassets\GestaoAnimalWeb.StaticWebAssets.Manifest.cache
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\staticwebassets\GestaoAnimalWeb.StaticWebAssets.xml
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\scopedcss\bundle\GestaoAnimalWeb.styles.css
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.TagHelpers.input.cache
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.TagHelpers.output.cache
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.RazorCoreGenerate.cache
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.RazorTargetAssemblyInfo.cache
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.RazorTargetAssemblyInfo.cs
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.Views.pdb
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.dll
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.pdb
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.genruntimeconfig.cache
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\GestaoAnimalWeb.csproj.CopyComplete
+E:\Bibliotecas\Documentos\UFS\6 Periodo\ES II\Projeto v.ES2\GestaoAnimal\Codigo\GestaoAnimalWeb\GestaoAnimalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
