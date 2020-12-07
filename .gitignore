@@ -23,7 +23,7 @@ _UpgradeReport_Files/
 # Directories #
 ###############
 .vscode/*
-vs/
+.vs/
 bin/
 obj/
 TestResults/
