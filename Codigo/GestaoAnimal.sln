@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoAnimalWeb", "GestaoAnimalWeb\GestaoAnimalWeb.csproj", "{DCEB77C1-29E0-4F4E-BD75-0AF595E86D83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCEB77C1-29E0-4F4E-BD75-0AF595E86D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCEB77C1-29E0-4F4E-BD75-0AF595E86D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCEB77C1-29E0-4F4E-BD75-0AF595E86D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCEB77C1-29E0-4F4E-BD75-0AF595E86D83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8EFF2E3B-CD00-4349-A4D4-3296F56C4472}
+	EndGlobalSection
+EndGlobal
