@@ -6,11 +6,11 @@ namespace Core
 {
     public interface IAplicaMedicamentoService
     {
-        void Editar(Aplicamedicamento aplicaMedicamento);
-        int Inserir(Aplicamedicamento aplicaMedicamento);
-        Aplicamedicamento Obter(int idAplicacao);
+        void Editar(AplicaMedicamento aplicaMedicamento);
+        int Inserir(AplicaMedicamento aplicaMedicamento);
+        AplicaMedicamento Obter(int idAplicacao);
         IEnumerable<AplicamedicamentoDTO> ObterTodosPorNome(string nome);
-        IEnumerable<Aplicamedicamento> ObterTodos();
+        IEnumerable<AplicaMedicamento> ObterTodos();
         void Remover(int idAplicacao);
         IEnumerable<AplicamedicamentoDTO> ObterPorNomeOrdenadoDescending(string nome);
     }

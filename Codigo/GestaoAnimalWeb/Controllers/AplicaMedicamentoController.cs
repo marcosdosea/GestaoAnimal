@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Core;
 using AutoMapper;
+using Models;
+using System.Collections.Generic;
 
 namespace GestaoAnimalWeb.Controllers
 {
@@ -19,13 +21,17 @@ namespace GestaoAnimalWeb.Controllers
         // GET: AplicaMedicamento
         public ActionResult Index()
         {
-            return View();
+            var listaAplicacaoMedicamento = _aplicaMedicamentoService.ObterTodos();
+            var aplicaMedicamentoModel = _mapper.Map<List<AplicaMedicamentoModel>>(listaAplicacaoMedicamento);
+            return View(aplicaMedicamentoModel);
         }
 
         // GET: AplicaMedicamento/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            AplicaMedicamento aplicaMedicamento = _aplicaMedicamentoService.Obter(id);
+            AplicaMedicamentoModel aplicaMedicamentoModel = _mapper.Map<AplicaMedicamentoModel>(aplicaMedicamento);
+            return View(aplicaMedicamentoModel);
         }
 
         // GET: AplicaMedicamento/Create
@@ -37,58 +43,52 @@ namespace GestaoAnimalWeb.Controllers
         // POST: AplicaMedicamento/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(AplicaMedicamentoModel aplicaMedicamentoModel)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                var aplicaMedicamento = _mapper.Map<AplicaMedicamento>(aplicaMedicamentoModel);
+                _aplicaMedicamentoService.Inserir(aplicaMedicamento);
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: AplicaMedicamento/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            AplicaMedicamento aplicaMedicamento = _aplicaMedicamentoService.Obter(id);
+            AplicaMedicamentoModel aplicaMedicamentoModel = _mapper.Map<AplicaMedicamentoModel>(aplicaMedicamento);
+            return View(aplicaMedicamentoModel);
         }
 
         // POST: AplicaMedicamento/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, AplicaMedicamentoModel aplicaMedicamentoModel)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                var aplicaMedicamento = _mapper.Map<AplicaMedicamento>(aplicaMedicamentoModel);
+                _aplicaMedicamentoService.Editar(aplicaMedicamento);
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: AplicaMedicamento/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            AplicaMedicamento aplicaMedicamento = _aplicaMedicamentoService.Obter(id);
+            AplicaMedicamentoModel aplicaMedicamentoModel = _mapper.Map<AplicaMedicamentoModel>(aplicaMedicamento);
+            return View(aplicaMedicamentoModel);
         }
 
         // POST: AplicaMedicamento/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, AplicaMedicamentoModel aplicaMedicamentoModel)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            _aplicaMedicamentoService.Remover(id);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

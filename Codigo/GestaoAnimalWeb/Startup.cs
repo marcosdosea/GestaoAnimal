@@ -34,6 +34,7 @@ namespace GestaoAnimalWeb
                 Configuration.GetConnectionString("GestaoAnimalConnection")));
 
             services.AddTransient<IAplicaMedicamentoService, AplicaMedicamentoService>();
+            services.AddTransient<IMedicamentoService, MedicamentoService>();
 
             services.AddAutoMapper(typeof(Startup).Assembly);
         }

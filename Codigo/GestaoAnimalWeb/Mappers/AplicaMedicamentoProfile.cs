@@ -8,7 +8,7 @@ namespace Mappers
     {
         public AplicaMedicamentoProfile()
         {
-            CreateMap<AplicaMedicamentoModel, Aplicamedicamento>().ReverseMap();
+            CreateMap<AplicaMedicamentoModel, AplicaMedicamento>().ReverseMap();
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Core
 {
-    public partial class Aplicamedicamento
+    public partial class AplicaMedicamento
     {
         public int IdAplicaMedicamento { get; set; }
         public string Dosagem { get; set; }
