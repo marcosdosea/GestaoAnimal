@@ -16,6 +16,12 @@ namespace GestaoAnimalWeb.Controllers
         IConsultaService _consultaService;
         IMapper _mapper;
         // GET: ConsultaController
+
+        public ConsultaController(IConsultaService consultaService, IMapper mapper)
+        {
+            _consultaService = consultaService;
+            _mapper = mapper;
+        }
         public ActionResult Index()
         {
             var listaConsultas = _consultaService.ObterTodos();
