@@ -1,16 +1,13 @@
-﻿using System;
+﻿using Core;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Core
+namespace Models
 {
-    public partial class Medicamento
+    public class MedicamentoModel
     {
-        public Medicamento()
-        {
-            Agendamedicamento = new HashSet<Agendamedicamento>();
-            Aplicamedicamento = new HashSet<AplicaMedicamento>();
-        }
-
         public int IdMedicamento { get; set; }
         public string Nome { get; set; }
         public string Especie { get; set; }

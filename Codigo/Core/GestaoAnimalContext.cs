@@ -17,7 +17,7 @@ namespace Core
 
         public virtual DbSet<Agendamedicamento> Agendamedicamento { get; set; }
         public virtual DbSet<Animal> Animal { get; set; }
-        public virtual DbSet<Aplicamedicamento> Aplicamedicamento { get; set; }
+        public virtual DbSet<AplicaMedicamento> Aplicamedicamento { get; set; }
         public virtual DbSet<Consulta> Consulta { get; set; }
         public virtual DbSet<Exame> Exame { get; set; }
         public virtual DbSet<Medicamento> Medicamento { get; set; }
@@ -179,7 +179,7 @@ namespace Core
                     .HasConstraintName("fk_TB_ANIMAL_TB_PESSOA");
             });
 
-            modelBuilder.Entity<Aplicamedicamento>(entity =>
+            modelBuilder.Entity<AplicaMedicamento>(entity =>
             {
                 entity.HasKey(e => e.IdAplicaMedicamento)
                     .HasName("PRIMARY");

@@ -1,4 +1,3 @@
-using AutoMapper;
 using Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace GestaoAnimalWeb
 {
@@ -28,17 +28,16 @@ namespace GestaoAnimalWeb
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            // injeção dependência DBContext			
-            services.AddDbContext<GestaoAnimalContext>(options =>
-                options.UseMySQL(
-                    Configuration.GetConnectionString("GestaoAnimalConnection")));
 
-            // injeção dependência Services
+            services.AddDbContext<GestaoAnimalContext>(options =>
+            options.UseMySQL(
+                Configuration.GetConnectionString("GestaoAnimalConnection")));
+
+            services.AddTransient<IAplicaMedicamentoService, AplicaMedicamentoService>();
+            services.AddTransient<IMedicamentoService, MedicamentoService>();
             services.AddTransient<IAnimalService, AnimalService>();
             services.AddTransient<IConsultaService, ConsultaService>();
-            
 
-            // injeção dependência mappers
             services.AddAutoMapper(typeof(Startup).Assembly);
         }
 
