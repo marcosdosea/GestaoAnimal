@@ -1,6 +1,8 @@
+using Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -8,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Service;
+using AutoMapper;
 
 namespace GestaoAnimalWeb
 {
@@ -24,6 +28,15 @@ namespace GestaoAnimalWeb
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<GestaoAnimalContext>(options =>
+            options.UseMySQL(
+                Configuration.GetConnectionString("GestaoAnimalConnection")));
+
+            services.AddTransient<IAplicaMedicamentoService, AplicaMedicamentoService>();
+            services.AddTransient<IMedicamentoService, MedicamentoService>();
+
+            services.AddAutoMapper(typeof(Startup).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

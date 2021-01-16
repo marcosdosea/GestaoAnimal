@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Models.MedicamentoModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listar</h1>
+
+<p>
+    <a asp-action="Create">Criar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdMedicamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Especie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsVacina)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdMedicamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Especie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsVacina)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.IdMedicamento  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.IdMedicamento  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.IdMedicamento  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

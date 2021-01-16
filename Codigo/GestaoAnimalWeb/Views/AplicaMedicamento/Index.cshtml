@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Models.AplicaMedicamentoModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listar</h1>
+
+<p>
+    <a asp-action="Create">Criar Nova Aplicação</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdAplicaMedicamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dosagem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataAplicacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Horario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPessoa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdAnimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdMedicamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observacoes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdAplicaMedicamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dosagem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAplicacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Horario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPessoa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdMedicamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observacoes)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.IdAplicaMedicamento }) |
+                @Html.ActionLink("Details", "Details", new { id=item.IdAplicaMedicamento }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.IdAplicaMedicamento })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
