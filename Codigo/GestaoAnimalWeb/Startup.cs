@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Service;
 using AutoMapper;
 
 namespace GestaoAnimalWeb
@@ -35,6 +35,8 @@ namespace GestaoAnimalWeb
 
             services.AddTransient<IAplicaMedicamentoService, AplicaMedicamentoService>();
             services.AddTransient<IMedicamentoService, MedicamentoService>();
+            services.AddTransient<IAnimalService, AnimalService>();
+            services.AddTransient<IConsultaService, ConsultaService>();
 
             services.AddAutoMapper(typeof(Startup).Assembly);
         }
