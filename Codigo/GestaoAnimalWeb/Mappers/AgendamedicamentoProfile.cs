@@ -8,7 +8,7 @@ namespace Mappers
     {
         public AgendamedicamentoProfile()
         {
-            CreateMap<AgendamedicamentoProfile, Agendamedicamento>().ReverseMap();
+            CreateMap<AgendamedicamentoModel, Agendamedicamento>().ReverseMap();
         }
     }
 }
