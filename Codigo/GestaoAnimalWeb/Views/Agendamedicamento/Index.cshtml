@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Models.AgendamedicamentoModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Criar Novo Agendamento</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdAgendamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Frequencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataTermino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Intervalo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPessoa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdAnimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdMedicamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdConsulta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dosagem)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdAgendamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Frequencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataTermino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Intervalo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPessoa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdMedicamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdConsulta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dosagem)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.IdAgendamento }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdAgendamento }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdAgendamento })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
