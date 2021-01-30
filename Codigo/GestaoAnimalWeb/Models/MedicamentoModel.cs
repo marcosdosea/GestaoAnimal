@@ -13,10 +13,15 @@ namespace Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdMedicamento { get; set; }
+        [Required]
+        [StringLength(100)]
         public string Nome { get; set; }
-        public string Especie { get; set; }
+
+        [Display(Name = "Espécie")]
+        public int IdEspecieAnimal { get; set; }
         public byte? IsVacina { get; set; }
 
+        public virtual Especieanimal IdEspecieAnimalNavigation { get; set; }
         public virtual ICollection<Agendamedicamento> Agendamedicamento { get; set; }
         public virtual ICollection<Aplicamedicamento> Aplicamedicamento { get; set; }
     }

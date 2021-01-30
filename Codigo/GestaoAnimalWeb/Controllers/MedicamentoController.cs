@@ -2,7 +2,9 @@
 using Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Models;
+using System;
 using System.Collections.Generic;
 
 namespace GestaoAnimalWeb.Controllers
@@ -10,25 +12,31 @@ namespace GestaoAnimalWeb.Controllers
     public class MedicamentoController : Controller
     {
         IMedicamentoService _medicamentoService;
+        IEspecieAnimalService _especieAnimalService;
         IMapper _mapper;
 
-        public MedicamentoController(IMedicamentoService medicamentoService, IMapper mapper)
+        public MedicamentoController(IMedicamentoService medicamentoService, 
+            IEspecieAnimalService especieAnimalService, IMapper mapper)
         {
             _medicamentoService = medicamentoService;
+            _especieAnimalService = especieAnimalService;
             _mapper = mapper;
         }
         // GET: MedicamentoController
         public ActionResult Index()
         {
             var listaMedicamentos = _medicamentoService.ObterTodos();
-            var medicamentosModel = _mapper.Map<List<MedicamentoModel>>(listaMedicamentos);
-            return View(medicamentosModel);
+
+            return View(listaMedicamentos);
         }
 
         // GET: MedicamentoController/Details/5
         public ActionResult Details(int id)
         {
             Medicamento medicamento = _medicamentoService.Obter(id);
+            Especieanimal especie = _especieAnimalService.Obter(medicamento.IdEspecieAnimal);
+
+            ViewBag.nomeEspecie = especie.Nome;
             MedicamentoModel medicamentoModel = _mapper.Map<MedicamentoModel>(medicamento);
             return View(medicamentoModel);
         }
@@ -36,6 +44,9 @@ namespace GestaoAnimalWeb.Controllers
         // GET: MedicamentoController/Create
         public ActionResult Create()
         {
+            IEnumerable<Especieanimal> listaEspecies = _especieAnimalService.ObterTodos();
+
+            ViewBag.Especies = new SelectList(listaEspecies, "IdEspecieAnimal", "Nome", null);
             return View();
         }
 
@@ -47,6 +58,7 @@ namespace GestaoAnimalWeb.Controllers
             if (ModelState.IsValid)
             {
                 var medicamento = _mapper.Map<Medicamento>(medicamentoModel);
+                medicamento.IsVacina = 1;
                 _medicamentoService.Inserir(medicamento);
             }
             return RedirectToAction(nameof(Index));
@@ -55,6 +67,10 @@ namespace GestaoAnimalWeb.Controllers
         // GET: MedicamentoController/Edit/5
         public ActionResult Edit(int id)
         {
+            IEnumerable<Especieanimal> listaEspecies = _especieAnimalService.ObterTodos();
+
+            ViewBag.Especies = new SelectList(listaEspecies, "IdEspecieAnimal", "Nome", null);
+
             Medicamento medicamento = _medicamentoService.Obter(id);
             MedicamentoModel medicamentoModel = _mapper.Map<MedicamentoModel>(medicamento);
             return View(medicamentoModel);
@@ -77,7 +93,11 @@ namespace GestaoAnimalWeb.Controllers
         public ActionResult Delete(int id)
         {
             Medicamento medicamento = _medicamentoService.Obter(id);
+            Especieanimal especie = _especieAnimalService.Obter(medicamento.IdEspecieAnimal);
+            ViewBag.nomeEspecie = especie.Nome;
+
             MedicamentoModel medicamentoModel = _mapper.Map<MedicamentoModel>(medicamento);
+
             return View(medicamentoModel);
         }
 

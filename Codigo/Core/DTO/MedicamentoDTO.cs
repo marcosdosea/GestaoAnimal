@@ -6,8 +6,10 @@ namespace Core
 {
     public class MedicamentoDTO
     {
+        public int IdMedicamento { get; set; }
         public string Nome { get; set; }
-        public string Especie { get; set; }
+        public int IdEspecieAnimal { get; set; }
         public byte? IsVacina { get; set; }
+        public string NomeEspecie { get; set; }
     }
 }
