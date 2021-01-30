@@ -9,7 +9,7 @@ namespace Core
         {
             Agendamedicamento = new HashSet<Agendamedicamento>();
             Animal = new HashSet<Animal>();
-            Aplicamedicamento = new HashSet<AplicaMedicamento>();
+            Aplicamedicamento = new HashSet<Aplicamedicamento>();
             Consulta = new HashSet<Consulta>();
             Pessoaorganizacao = new HashSet<Pessoaorganizacao>();
         }
@@ -30,7 +30,7 @@ namespace Core
 
         public virtual ICollection<Agendamedicamento> Agendamedicamento { get; set; }
         public virtual ICollection<Animal> Animal { get; set; }
-        public virtual ICollection<AplicaMedicamento> Aplicamedicamento { get; set; }
+        public virtual ICollection<Aplicamedicamento> Aplicamedicamento { get; set; }
         public virtual ICollection<Consulta> Consulta { get; set; }
         public virtual ICollection<Pessoaorganizacao> Pessoaorganizacao { get; set; }
     }

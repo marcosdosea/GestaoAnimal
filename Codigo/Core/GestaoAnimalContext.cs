@@ -17,9 +17,11 @@ namespace Core
 
         public virtual DbSet<Agendamedicamento> Agendamedicamento { get; set; }
         public virtual DbSet<Animal> Animal { get; set; }
-        public virtual DbSet<AplicaMedicamento> Aplicamedicamento { get; set; }
+        public virtual DbSet<Aplicamedicamento> Aplicamedicamento { get; set; }
         public virtual DbSet<Consulta> Consulta { get; set; }
+        public virtual DbSet<Especieanimal> Especieanimal { get; set; }
         public virtual DbSet<Exame> Exame { get; set; }
+        public virtual DbSet<Lote> Lote { get; set; }
         public virtual DbSet<Medicamento> Medicamento { get; set; }
         public virtual DbSet<Organizacao> Organizacao { get; set; }
         public virtual DbSet<Pessoa> Pessoa { get; set; }
@@ -28,11 +30,11 @@ namespace Core
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //if (!optionsBuilder.IsConfigured)
-            //{
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                //optionsBuilder.UseMySQL("server=localhost;port=3306;user=root;password=123456;database=GestaoAnimal");
-            //}
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseMySQL("server=localhost;port=3306;user=root;password=123456;database= gestaoanimal");
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -115,6 +117,12 @@ namespace Core
 
                 entity.ToTable("animal");
 
+                entity.HasIndex(e => e.IdEspecieAnimal)
+                    .HasName("fk_Animal_EspecieAnimal1_idx");
+
+                entity.HasIndex(e => e.IdLote)
+                    .HasName("fk_Animal_Lote1_idx");
+
                 entity.HasIndex(e => e.IdOrganizacao)
                     .HasName("fk_TB_ANIMAL_TB_ORGANIZACAO1_idx");
 
@@ -129,22 +137,22 @@ namespace Core
                     .HasColumnName("dataNascimento")
                     .HasColumnType("date");
 
-                entity.Property(e => e.Especie)
-                    .HasColumnName("especie")
-                    .HasMaxLength(45)
-                    .IsUnicode(false);
-
                 entity.Property(e => e.Falecido).HasColumnName("falecido");
 
                 entity.Property(e => e.Foto)
                     .HasColumnName("foto")
                     .HasColumnType("blob");
 
+                entity.Property(e => e.IdEspecieAnimal).HasColumnName("idEspecieAnimal");
+
+                entity.Property(e => e.IdLote).HasColumnName("idLote");
+
                 entity.Property(e => e.IdOrganizacao).HasColumnName("idOrganizacao");
 
                 entity.Property(e => e.IdPessoa).HasColumnName("idPessoa");
 
                 entity.Property(e => e.Nome)
+                    .IsRequired()
                     .HasColumnName("nome")
                     .HasMaxLength(50)
                     .IsUnicode(false);
@@ -166,6 +174,18 @@ namespace Core
                     .HasMaxLength(1)
                     .IsFixedLength();
 
+                entity.HasOne(d => d.IdEspecieAnimalNavigation)
+                    .WithMany(p => p.Animal)
+                    .HasForeignKey(d => d.IdEspecieAnimal)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Animal_EspecieAnimal1");
+
+                entity.HasOne(d => d.IdLoteNavigation)
+                    .WithMany(p => p.Animal)
+                    .HasForeignKey(d => d.IdLote)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Animal_Lote1");
+
                 entity.HasOne(d => d.IdOrganizacaoNavigation)
                     .WithMany(p => p.Animal)
                     .HasForeignKey(d => d.IdOrganizacao)
@@ -179,7 +199,7 @@ namespace Core
                     .HasConstraintName("fk_TB_ANIMAL_TB_PESSOA");
             });
 
-            modelBuilder.Entity<AplicaMedicamento>(entity =>
+            modelBuilder.Entity<Aplicamedicamento>(entity =>
             {
                 entity.HasKey(e => e.IdAplicaMedicamento)
                     .HasName("PRIMARY");
@@ -282,6 +302,26 @@ namespace Core
                     .HasConstraintName("fk_Consulta_Pessoa1");
             });
 
+            modelBuilder.Entity<Especieanimal>(entity =>
+            {
+                entity.HasKey(e => e.IdEspecieAnimal)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("especieanimal");
+
+                entity.HasIndex(e => e.Nome)
+                    .HasName("nome_UNIQUE")
+                    .IsUnique();
+
+                entity.Property(e => e.IdEspecieAnimal).HasColumnName("idEspecieAnimal");
+
+                entity.Property(e => e.Nome)
+                    .IsRequired()
+                    .HasColumnName("nome")
+                    .HasMaxLength(45)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<Exame>(entity =>
             {
                 entity.HasKey(e => e.IdExame)
@@ -339,6 +379,26 @@ namespace Core
                     .HasConstraintName("fk_Exame_TipoExame1");
             });
 
+            modelBuilder.Entity<Lote>(entity =>
+            {
+                entity.HasKey(e => e.IdLote)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("lote");
+
+                entity.HasIndex(e => e.Numeracao)
+                    .HasName("numeracao_UNIQUE")
+                    .IsUnique();
+
+                entity.Property(e => e.IdLote).HasColumnName("idLote");
+
+                entity.Property(e => e.Numeracao)
+                    .IsRequired()
+                    .HasColumnName("numeracao")
+                    .HasMaxLength(45)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<Medicamento>(entity =>
             {
                 entity.HasKey(e => e.IdMedicamento)
@@ -346,19 +406,26 @@ namespace Core
 
                 entity.ToTable("medicamento");
 
+                entity.HasIndex(e => e.IdEspecieAnimal)
+                    .HasName("fk_Medicamento_EspecieAnimal2_idx");
+
                 entity.Property(e => e.IdMedicamento).HasColumnName("idMedicamento");
 
-                entity.Property(e => e.Especie)
-                    .HasColumnName("especie")
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
+                entity.Property(e => e.IdEspecieAnimal).HasColumnName("idEspecieAnimal");
 
                 entity.Property(e => e.IsVacina).HasColumnName("isVacina");
 
                 entity.Property(e => e.Nome)
+                    .IsRequired()
                     .HasColumnName("nome")
                     .HasMaxLength(100)
                     .IsUnicode(false);
+
+                entity.HasOne(d => d.IdEspecieAnimalNavigation)
+                    .WithMany(p => p.Medicamento)
+                    .HasForeignKey(d => d.IdEspecieAnimal)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Medicamento_EspecieAnimal2");
             });
 
             modelBuilder.Entity<Organizacao>(entity =>
@@ -393,6 +460,7 @@ namespace Core
                     .IsUnicode(false);
 
                 entity.Property(e => e.Nome)
+                    .IsRequired()
                     .HasColumnName("nome")
                     .HasMaxLength(100)
                     .IsUnicode(false);
@@ -444,6 +512,7 @@ namespace Core
                     .IsUnicode(false);
 
                 entity.Property(e => e.Nome)
+                    .IsRequired()
                     .HasColumnName("nome")
                     .HasMaxLength(100)
                     .IsUnicode(false);

@@ -15,42 +15,42 @@ namespace Service
             _context = context;
         }
 
-        void IMedicamentoService.Editar(Medicamento medicamento)
+        public void Editar(Medicamento medicamento)
         {
             _context.Update(medicamento);
             _context.SaveChanges();
         }
 
-        int IMedicamentoService.Inserir(Medicamento medicamento)
+        public int Inserir(Medicamento medicamento)
         {
             _context.Add(medicamento);
             _context.SaveChanges();
             return medicamento.IdMedicamento;
         }
 
-        Medicamento IMedicamentoService.Obter(int idMedicamento)
+        public Medicamento Obter(int idMedicamento)
         {
             IEnumerable<Medicamento> medicamentos = GetQuery()
                 .Where(medicamento => medicamento.IdMedicamento.Equals(idMedicamento));
             return medicamentos.ElementAtOrDefault(0);
         }
 
-        IEnumerable<MedicamentoDTO> IMedicamentoService.ObterPorNomeOrdenadoDescending(string nome)
+        public IEnumerable<MedicamentoDTO> ObterPorNomeOrdenadoDescending(string nome)
         {
             throw new NotImplementedException();
         }
 
-        IEnumerable<Medicamento> IMedicamentoService.ObterTodos()
+        public IEnumerable<Medicamento> ObterTodos()
         {
             return GetQuery();
         }
 
-        IEnumerable<MedicamentoDTO> IMedicamentoService.ObterTodosPorNome(string nome)
+        public IEnumerable<MedicamentoDTO> ObterTodosPorNome(string nome)
         {
             throw new NotImplementedException();
         }
 
-        void IMedicamentoService.Remover(int idMedicamento)
+        public void Remover(int idMedicamento)
         {
             var _medicamento = _context.Medicamento.Find(idMedicamento);
             _context.Medicamento.Remove(_medicamento);
