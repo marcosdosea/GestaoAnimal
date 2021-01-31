@@ -1,10 +1,10 @@
 ﻿@model GestaoAnimalWeb.Models.AnimalModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Inserir Animal";
 }
 
-<h1>Create</h1>
+<h1>Inserir Animal</h1>
 
 <h4>AnimalModel</h4>
 <hr />
@@ -12,24 +12,25 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <!--<div class="form-group">
                 <label asp-for="IdAnimal" class="control-label"></label>
                 <input asp-for="IdAnimal" class="form-control" />
                 <span asp-validation-for="IdAnimal" class="text-danger"></span>
-            </div>
+            </div>-->
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Especie" class="control-label"></label>
-                <input asp-for="Especie" class="form-control" />
-                <span asp-validation-for="Especie" class="text-danger"></span>
+                <label asp-for="IdEspecieAnimal" class="control-label"></label>
+                <input asp-for="IdEspecieAnimal" class="form-control" />
+                <span asp-validation-for="IdEspecieAnimal" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Raca" class="control-label"></label>
-                <input asp-for="Raca" class="form-control" />
+                <select asp-for="Raca" asp-items="ViewBag.Animais" class="form-control"></select>
+                <!--<input asp-for="Raca" class="form-control" />-->
                 <span asp-validation-for="Raca" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -39,7 +40,8 @@
             </div>
             <div class="form-group">
                 <label asp-for="Sexo" class="control-label"></label>
-                <input asp-for="Sexo" class="form-control" />
+                <select asp-for="Sexo" asp-items="ViewBag.Animais" class="form-control"></select>
+                <!--<input asp-for="Sexo" class="form-control" />-->
                 <span asp-validation-for="Sexo" class="text-danger"></span>
             </div>
             <div class="form-group">

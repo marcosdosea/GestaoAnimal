@@ -24,7 +24,6 @@ namespace GestaoAnimalWeb.Controllers
         public ActionResult Index()
         {
             var listaAnimais = _animalService.ObterTodos();
-           
             var listalistaAnimaisModel = _mapper.Map<List<AnimalModel>>(listaAnimais);
             return View(listalistaAnimaisModel);
         }

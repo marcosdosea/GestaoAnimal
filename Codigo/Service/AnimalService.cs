@@ -6,8 +6,8 @@ using Core;
 
 namespace Service
 {
-    public class AnimalService: IAnimalService
-    {
+	public class AnimalService : IAnimalService
+	{
 		private readonly GestaoAnimalContext _context;
 
 		public AnimalService(GestaoAnimalContext context)
@@ -33,7 +33,7 @@ namespace Service
 		/// <param name="autor">dados do autor</param>
 		public void Editar(Animal animal)
 		{
-			
+
 
 			_context.Update(animal);
 			_context.SaveChanges();
@@ -68,6 +68,16 @@ namespace Service
 		/// <returns></returns>
 		public IEnumerable<Animal> ObterTodos()
 		{
+			IQueryable<Animal> animais = _context.Animal;
+			var query = from animal in animais
+						select new AnimalDTO
+						{
+
+							Raca = animal.Raca,
+							Sexo = animal.Sexo,
+							Especie = animal.IdEspecieAnimal.ToString()
+							
+						};
 			return GetQuery();
 		}
 		/// <summary>
@@ -121,8 +131,18 @@ namespace Service
 			return animais;
 		}
 
-		
-
+		public IEnumerable<Animal> ObterPorEspecie(int IdEspecieAnimal)
+		{
+			IQueryable<Animal> animais = GetQuery()
+				.Where(animal => animal.IdEspecieAnimal == IdEspecieAnimal);
+			return animais;
+		}
+		public IEnumerable<Animal> ObterPorRaca(string raca)
+		{
+			IQueryable<Animal> animais = GetQuery()
+				.Where(animal => animal.Raca == raca);
+			return animais;
+		}
 		/// <summary>
 		/// Obtém autores ordenado de forma descendente
 		/// </summary>

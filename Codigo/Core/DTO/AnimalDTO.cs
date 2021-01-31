@@ -4,6 +4,7 @@ namespace Core
 {
     public class AnimalDTO
     {
+       
         public string Nome { get; set; }
         public string Especie { get; set; }
         public string Raca { get; set; }
@@ -16,5 +17,6 @@ namespace Core
         public byte? Falecido { get; set; }
         public int IdPessoa { get; set; }
         public int IdOrganizacao { get; set; }
+
     }
 }
