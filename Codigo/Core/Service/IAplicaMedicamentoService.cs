@@ -10,7 +10,7 @@ namespace Core
         int Inserir(Aplicamedicamento aplicaMedicamento);
         Aplicamedicamento Obter(int idAplicacao);
         IEnumerable<AplicamedicamentoDTO> ObterTodosPorNome(string nome);
-        IEnumerable<Aplicamedicamento> ObterTodos();
+        IEnumerable<AplicamedicamentoDTO> ObterTodos();
         void Remover(int idAplicacao);
         IEnumerable<AplicamedicamentoDTO> ObterPorNomeOrdenadoDescending(string nome);
     }
