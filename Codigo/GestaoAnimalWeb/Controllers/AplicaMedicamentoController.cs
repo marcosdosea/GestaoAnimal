@@ -29,7 +29,7 @@ namespace GestaoAnimalWeb.Controllers
         // GET: AplicaMedicamento/Details/5
         public ActionResult Details(int id)
         {
-            AplicaMedicamento aplicaMedicamento = _aplicaMedicamentoService.Obter(id);
+            Aplicamedicamento aplicaMedicamento = _aplicaMedicamentoService.Obter(id);
             AplicaMedicamentoModel aplicaMedicamentoModel = _mapper.Map<AplicaMedicamentoModel>(aplicaMedicamento);
             return View(aplicaMedicamentoModel);
         }
@@ -47,7 +47,7 @@ namespace GestaoAnimalWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                var aplicaMedicamento = _mapper.Map<AplicaMedicamento>(aplicaMedicamentoModel);
+                var aplicaMedicamento = _mapper.Map<Aplicamedicamento>(aplicaMedicamentoModel);
                 _aplicaMedicamentoService.Inserir(aplicaMedicamento);
             }
             return RedirectToAction(nameof(Index));
@@ -56,7 +56,7 @@ namespace GestaoAnimalWeb.Controllers
         // GET: AplicaMedicamento/Edit/5
         public ActionResult Edit(int id)
         {
-            AplicaMedicamento aplicaMedicamento = _aplicaMedicamentoService.Obter(id);
+            Aplicamedicamento aplicaMedicamento = _aplicaMedicamentoService.Obter(id);
             AplicaMedicamentoModel aplicaMedicamentoModel = _mapper.Map<AplicaMedicamentoModel>(aplicaMedicamento);
             return View(aplicaMedicamentoModel);
         }
@@ -68,7 +68,7 @@ namespace GestaoAnimalWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                var aplicaMedicamento = _mapper.Map<AplicaMedicamento>(aplicaMedicamentoModel);
+                var aplicaMedicamento = _mapper.Map<Aplicamedicamento>(aplicaMedicamentoModel);
                 _aplicaMedicamentoService.Editar(aplicaMedicamento);
             }
             return RedirectToAction(nameof(Index));
@@ -77,7 +77,7 @@ namespace GestaoAnimalWeb.Controllers
         // GET: AplicaMedicamento/Delete/5
         public ActionResult Delete(int id)
         {
-            AplicaMedicamento aplicaMedicamento = _aplicaMedicamentoService.Obter(id);
+            Aplicamedicamento aplicaMedicamento = _aplicaMedicamentoService.Obter(id);
             AplicaMedicamentoModel aplicaMedicamentoModel = _mapper.Map<AplicaMedicamentoModel>(aplicaMedicamento);
             return View(aplicaMedicamentoModel);
         }

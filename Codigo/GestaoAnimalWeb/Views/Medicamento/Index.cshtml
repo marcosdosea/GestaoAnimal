@@ -1,10 +1,10 @@
-﻿@model IEnumerable<Models.MedicamentoModel>
+﻿@model IEnumerable<Core.MedicamentoDTO>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Medicamentos";
 }
 
-<h1>Listar</h1>
+<h1>Medicamentos</h1>
 
 <p>
     <a asp-action="Create">Criar Novo</a>
@@ -13,39 +13,29 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.IdMedicamento)
+                Nome do Medicamento
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                Espécie
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Especie)
+                Ações
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsVacina)
-            </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IdMedicamento)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Especie)
+                @Html.DisplayFor(modelItem => item.NomeEspecie)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsVacina)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.IdMedicamento  }) |
-                @Html.ActionLink("Details", "Details", new {  id=item.IdMedicamento  }) |
-                @Html.ActionLink("Delete", "Delete", new {  id=item.IdMedicamento  })
+                @Html.ActionLink("Editar", "Edit", new {  id=item.IdMedicamento  }) |
+                @Html.ActionLink("Consultar", "Details", new {  id=item.IdMedicamento  }) |
+                @Html.ActionLink("Deletar", "Delete", new {  id=item.IdMedicamento  })
             </td>
         </tr>
 }

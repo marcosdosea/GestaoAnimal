@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Core
 {
-    public partial class AplicaMedicamento
+    public partial class Aplicamedicamento
     {
         public int IdAplicaMedicamento { get; set; }
         public string Dosagem { get; set; }

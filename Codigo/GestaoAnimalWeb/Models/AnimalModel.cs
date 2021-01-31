@@ -25,7 +25,7 @@ namespace GestaoAnimalWeb.Models
         public virtual Organizacao IdOrganizacaoNavigation { get; set; }
         public virtual Pessoa IdPessoaNavigation { get; set; }
         public virtual ICollection<Agendamedicamento> Agendamedicamento { get; set; }
-        public virtual ICollection<AplicaMedicamento> Aplicamedicamento { get; set; }
+        public virtual ICollection<Aplicamedicamento> Aplicamedicamento { get; set; }
         public virtual ICollection<Consulta> Consulta { get; set; }
         public virtual ICollection<Exame> Exame { get; set; }
     }
