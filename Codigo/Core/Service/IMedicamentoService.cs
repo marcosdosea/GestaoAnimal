@@ -11,6 +11,7 @@ namespace Core
         Medicamento Obter(int idMedicamento);
         IEnumerable<MedicamentoDTO> ObterTodosPorNome(string nome);
         IEnumerable<MedicamentoDTO> ObterTodos();
+        IEnumerable<Medicamento> ObterPorEspecie(int idEspecieAnimal);
         void Remover(int idMedicamento);
         IEnumerable<MedicamentoDTO> ObterPorNomeOrdenadoDescending(string nome);
     }

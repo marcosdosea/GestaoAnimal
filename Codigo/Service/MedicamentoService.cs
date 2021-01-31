@@ -35,6 +35,14 @@ namespace Service
             return medicamentos.ElementAtOrDefault(0);
         }
 
+        public IEnumerable<Medicamento> ObterPorEspecie(int idEspecieAnimal)
+        {
+            IQueryable<Medicamento> medicamentos = GetQuery()
+                .Where(medicamento => medicamento.IdEspecieAnimal == idEspecieAnimal);
+
+            return medicamentos;
+        }
+
         public IEnumerable<MedicamentoDTO> ObterPorNomeOrdenadoDescending(string nome)
         {
             throw new NotImplementedException();
