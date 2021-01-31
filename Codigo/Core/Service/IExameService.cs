@@ -10,7 +10,7 @@ namespace Core
         int Inserir(Exame exame);
         Exame Obter(int idExame);
         IEnumerable<ExameDTO> ObterTodosPorNome(string nome);
-        IEnumerable<Exame> ObterTodos();
+        IEnumerable<ExameDTO> ObterTodos();
         void Remover(int idExame);
         IEnumerable<ExameDTO> ObterPorNomeOrdenadoDescending(string nome);
     }
