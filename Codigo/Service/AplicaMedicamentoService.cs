@@ -14,22 +14,22 @@ namespace Service
             _context = context;
         }
 
-        public void Editar(AplicaMedicamento aplicaMedicamento)
+        public void Editar(Aplicamedicamento aplicaMedicamento)
         {
             _context.Update(aplicaMedicamento);
             _context.SaveChanges();
         }
 
-        public int Inserir(AplicaMedicamento aplicamedicamento)
+        public int Inserir(Aplicamedicamento aplicamedicamento)
         {
             _context.Add(aplicamedicamento);
             _context.SaveChanges();
             return aplicamedicamento.IdAplicaMedicamento;
         }
 
-        public AplicaMedicamento Obter(int idAplicacao)
+        public Aplicamedicamento Obter(int idAplicacao)
         {
-            IEnumerable<AplicaMedicamento> aplicamedicamentos = GetQuery()
+            IEnumerable<Aplicamedicamento> aplicamedicamentos = GetQuery()
                 .Where(aplicamedicamento => aplicamedicamento.IdAplicaMedicamento.Equals(idAplicacao));
             return aplicamedicamentos.ElementAtOrDefault(0);
         }
@@ -39,7 +39,7 @@ namespace Service
             throw new NotImplementedException();
         }
 
-        public IEnumerable<AplicaMedicamento> ObterTodos()
+        public IEnumerable<Aplicamedicamento> ObterTodos()
         {
             return GetQuery();
         }
@@ -56,9 +56,9 @@ namespace Service
             _context.SaveChanges();
         }
 
-        private IQueryable<AplicaMedicamento> GetQuery()
+        private IQueryable<Aplicamedicamento> GetQuery()
         {
-            IQueryable<AplicaMedicamento> tb_aplicamedicamento = _context.Aplicamedicamento;
+            IQueryable<Aplicamedicamento> tb_aplicamedicamento = _context.Aplicamedicamento;
             var query = from aplicamedicamento in tb_aplicamedicamento
                         select aplicamedicamento;
             return query;

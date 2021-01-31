@@ -8,14 +8,13 @@ namespace Core
         public Animal()
         {
             Agendamedicamento = new HashSet<Agendamedicamento>();
-            Aplicamedicamento = new HashSet<AplicaMedicamento>();
+            Aplicamedicamento = new HashSet<Aplicamedicamento>();
             Consulta = new HashSet<Consulta>();
             Exame = new HashSet<Exame>();
         }
 
         public int IdAnimal { get; set; }
         public string Nome { get; set; }
-        public string Especie { get; set; }
         public string Raca { get; set; }
         public DateTime? DataNascimento { get; set; }
         public string Sexo { get; set; }
@@ -26,11 +25,15 @@ namespace Core
         public byte? Falecido { get; set; }
         public int IdPessoa { get; set; }
         public int IdOrganizacao { get; set; }
+        public int IdEspecieAnimal { get; set; }
+        public int IdLote { get; set; }
 
+        public virtual Especieanimal IdEspecieAnimalNavigation { get; set; }
+        public virtual Lote IdLoteNavigation { get; set; }
         public virtual Organizacao IdOrganizacaoNavigation { get; set; }
         public virtual Pessoa IdPessoaNavigation { get; set; }
         public virtual ICollection<Agendamedicamento> Agendamedicamento { get; set; }
-        public virtual ICollection<AplicaMedicamento> Aplicamedicamento { get; set; }
+        public virtual ICollection<Aplicamedicamento> Aplicamedicamento { get; set; }
         public virtual ICollection<Consulta> Consulta { get; set; }
         public virtual ICollection<Exame> Exame { get; set; }
     }
