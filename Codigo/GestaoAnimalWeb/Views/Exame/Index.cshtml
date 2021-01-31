@@ -1,13 +1,13 @@
-﻿@model IEnumerable<Models.ExameModel>
+﻿@model IEnumerable<Core.ExameDTO>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Exames";
 }
 
-<h1>Index</h1>
+<h1>Exames</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Criar novo</a>
 </p>
 <table class="table">
     <thead>
@@ -25,13 +25,13 @@
                 @Html.DisplayNameFor(model => model.Observacoes)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdConsulta)
+                @Html.DisplayNameFor(model => model.Consulta)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdAnimal)
+                @Html.DisplayNameFor(model => model.Animal)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdTipoExame)
+                @Html.DisplayNameFor(model => model.TipoExame)
             </th>
             <th></th>
         </tr>
@@ -52,18 +52,18 @@
                 @Html.DisplayFor(modelItem => item.Observacoes)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdConsulta)
+                @Html.DisplayFor(modelItem => item.Consulta)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdAnimal)
+                @Html.DisplayFor(modelItem => item.Animal)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdTipoExame)
+                @Html.DisplayFor(modelItem => item.TipoExame)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.IdExame }) |
-                @Html.ActionLink("Details", "Details", new { id = item.IdExame }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.IdExame })
+                @Html.ActionLink("Editar", "Edit", new { id=item.IdExame }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.IdExame }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.IdExame })
             </td>
         </tr>
 }
