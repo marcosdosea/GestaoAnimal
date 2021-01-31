@@ -10,13 +10,13 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-dark navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-dark navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-0">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">GestãoAnimal</a>
-                <button class="navbar-toggler" 
-                        type="button" 
-                        data-toggle="collapse" 
-                        data-target=".navbar-collapse" 
+                <button class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target=".navbar-collapse"
                         aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -28,27 +28,27 @@
                                 <i class="fa fa-user mr-1"></i>Login
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Animal" asp-action="Index">Animal</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Consulta" asp-action="Index">Consulta</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Exame" asp-action="Index">Exame</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Agendamedicamento" asp-action="Index">Agendamento</a>
-                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="d-flex wrapper">
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="list-group list-group-flush">
+                <a class="list-group-item list-group-item-action bg-light" asp-controller="Animal" asp-action="Index">Animal</a>
+                <a class="list-group-item list-group-item-action bg-light" asp-controller="Consulta" asp-action="Index">Consulta</a>
+                <a class="list-group-item list-group-item-action bg-light" asp-controller="Exame" asp-action="Index">Exame</a>
+                <a class="list-group-item list-group-item-action bg-light" asp-controller="Agendamedicamento" asp-action="Index">Agendamentos</a>
+                <a class="list-group-item list-group-item-action bg-light" asp-controller="Aplicamedicamento" asp-action="Index">Aplicações</a>
+                <a class="list-group-item list-group-item-action bg-light" asp-controller="Medicamento" asp-action="Index">Medicamentos</a>
+            </div>
+        </div>
+        <!-- Page Content -->
+        <div class="container">
             @RenderBody()
-        </main>
+        </div>
     </div>
 
     <footer class="border-top footer text-muted">
