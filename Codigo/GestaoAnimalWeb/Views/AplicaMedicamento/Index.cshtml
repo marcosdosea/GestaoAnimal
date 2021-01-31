@@ -1,10 +1,10 @@
-﻿@model IEnumerable<Models.AplicaMedicamentoModel>
+﻿@model IEnumerable<Core.AplicamedicamentoDTO>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Aplicações";
 }
 
-<h1>Listar</h1>
+<h1>Aplicações</h1>
 
 <p>
     <a asp-action="Create">Criar Nova Aplicação</a>
@@ -13,37 +13,33 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.IdAplicaMedicamento)
+                Medicamento
+            </th>
+            <th>
+                Animal
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Dosagem)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DataAplicacao)
+                Data de Aplicação
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Horario)
+                Pessoa
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdPessoa)
+                Ações
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdAnimal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdMedicamento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Observacoes)
-            </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IdAplicaMedicamento)
+                @Html.DisplayFor(modelItem => item.NomeMedicamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeAnimal)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Dosagem)
@@ -52,24 +48,12 @@
                 @Html.DisplayFor(modelItem => item.DataAplicacao)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Horario)
+                @Html.DisplayFor(modelItem => item.NomePessoa)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdPessoa)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdAnimal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdMedicamento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Observacoes)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.IdAplicaMedicamento }) |
-                @Html.ActionLink("Details", "Details", new { id=item.IdAplicaMedicamento }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.IdAplicaMedicamento })
+                @Html.ActionLink("Editar", "Edit", new { id=item.IdAplicaMedicamento }) |
+                @Html.ActionLink("Consultar", "Details", new { id=item.IdAplicaMedicamento }) |
+                @Html.ActionLink("Deletar", "Delete", new { id=item.IdAplicaMedicamento })
             </td>
         </tr>
 }
