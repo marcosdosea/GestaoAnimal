@@ -39,9 +39,21 @@ namespace Service
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Exame> ObterTodos()
+        public IEnumerable<ExameDTO> ObterTodos()
         {
-            return GetQuery();
+            IQueryable<Exame> exames = _context.Exame;
+            var query = from exame in exames
+                        select new ExameDTO
+                        {
+                            IdExame = exame.IdExame,
+                            Descricao = exame.Descricao,
+                            Data = exame.Data,
+                            Observacoes = exame.Observacoes,
+                            Consulta = exame.IdConsultaNavigation.Descricao,
+                            Animal = exame.IdAnimalNavigation.Nome,
+                            TipoExame = exame.IdTipoExameNavigation.Tipo
+                        };
+            return query;
         }
 
         public IEnumerable<ExameDTO> ObterTodosPorNome(string nome)

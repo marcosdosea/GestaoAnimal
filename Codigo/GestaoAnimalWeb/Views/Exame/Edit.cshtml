@@ -4,19 +4,14 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Editar</h1>
 
-<h4>ExameModel</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="IdExame" class="control-label"></label>
-                <input asp-for="IdExame" class="form-control" />
-                <span asp-validation-for="IdExame" class="text-danger"></span>
-            </div>
+            @Html.HiddenFor(model => model.IdExame)
             <div class="form-group">
                 <label asp-for="Descricao" class="control-label"></label>
                 <input asp-for="Descricao" class="form-control" />
@@ -34,17 +29,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="IdConsulta" class="control-label"></label>
-                <input asp-for="IdConsulta" class="form-control" />
+                <select asp-for="IdConsulta" asp-items="ViewBag.IdConsulta" class="form-control"></select>
                 <span asp-validation-for="IdConsulta" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="IdAnimal" class="control-label"></label>
-                <input asp-for="IdAnimal" class="form-control" />
+                <select asp-for="IdAnimal" asp-items="ViewBag.IdAnimal" class="form-control"></select>
                 <span asp-validation-for="IdAnimal" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="IdTipoExame" class="control-label"></label>
-                <input asp-for="IdTipoExame" class="form-control" />
+                <select asp-for="IdTipoExame" asp-items="ViewBag.IdTipoExame" class="form-control"></select>
                 <span asp-validation-for="IdTipoExame" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -55,7 +50,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Voltar à lista</a>
 </div>
 
 @section Scripts {

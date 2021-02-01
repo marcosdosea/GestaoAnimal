@@ -55,10 +55,8 @@ namespace Service
 		}
 		public Consulta Obter(int IdConsulta)
 		{
-			IQueryable<Consulta> consultas = _context.Consulta;
-			var query = from consulta in consultas
-						where consulta.IdConsulta.Equals(IdConsulta)
-						select consultas;
+			IEnumerable<Consulta> consultas = GetQuery()
+				.Where(consulta => consulta.IdConsulta.Equals(IdConsulta));
 			return consultas.ElementAtOrDefault(0);
 		}
 		/// <summary>
