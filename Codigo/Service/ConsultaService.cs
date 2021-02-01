@@ -15,10 +15,18 @@ namespace Service
 		}
 
 
-		//Consulta Obter(int IdConsulta);
-		//IEnumerable<Consulta> ObterPorDescricao(string descricao);
+		
+		
+		
+		
+		
 
+		public void Editar(Consulta consulta)
+		{
 
+			_context.Update(consulta);
+			_context.SaveChanges();
+		}
 
 		/// <summary>
 		/// Insere um novo autor no base de dados
@@ -31,36 +39,24 @@ namespace Service
 			_context.SaveChanges();
 			return consulta.IdConsulta;
 		}
+		public Consulta Obter(int IdConsulta)
+		{
+			IEnumerable<Consulta> consultas = GetQuery().Where(consultaModel => consultaModel.IdConsulta.Equals(IdConsulta));
 
+			return consultas.ElementAtOrDefault(0);
+		}
 		/// <summary>
 		/// Atualiza os dados do autor na base de dados
 		/// </summary>
 		/// <param name="autor">dados do autor</param>
-		public void Editar(Consulta consulta)
-		{
 
-			_context.Update(consulta);
-			_context.SaveChanges();
-		}
 
 		/// <summary>
 		/// Remove um autor da base de dados
 		/// </summary>
 		/// <param name="idAutor">identificado do autor</param>
-		public void Remover(int IdConsulta)
-		{
-			var _consulta = _context.Consulta.Find(IdConsulta);
-			_context.Consulta.Remove(_consulta);
-			_context.SaveChanges();
-		}
-		public Consulta Obter(int IdConsulta)
-		{
-			IQueryable<Consulta> consultas = _context.Consulta;
-			var query = from consulta in consultas
-						where consulta.IdConsulta.Equals(IdConsulta)
-						select consultas;
-			return consultas.ElementAtOrDefault(0);
-		}
+		
+		
 		/// <summary>
 		/// Consulta genérica aos dados do autor
 		/// </summary>
@@ -72,6 +68,10 @@ namespace Service
 						select consulta;
 			return query;
 		}
+
+
+		
+		
 
 		/// <summary>
 		/// Obtém todos os autores
@@ -85,10 +85,7 @@ namespace Service
 		/// REtorna o número de autores cadastrados
 		/// </summary>
 		/// <returns></returns>
-		public int GetNumeroConsultas()
-		{
-			return _context.Consulta.Count();
-		}
+
 
 
 		/// <summary>
@@ -96,17 +93,26 @@ namespace Service
 		/// </summary>
 		/// <param name="nome">nome a ser buscado</param>
 		/// <returns></returns>
-		public IEnumerable<Consulta> ObterPorDescricao(string descricao)
+		
+		public IEnumerable<ConsultaDTO> ObterPorDescricao(string descricao)
 		{
-			IEnumerable<Consulta> consultas = GetQuery()
-				.Where(animalModel => animalModel.Descricao.
-				StartsWith(descricao));
-			return consultas;
+			IQueryable<Consulta> consulta = _context.Consulta;
+			var query = from consulta2 in consulta
+						where descricao.StartsWith(descricao)
+						orderby consulta2.Descricao descending
+						select new ConsultaDTO
+						{
+							Descricao = consulta2.Descricao
+						};
+			return query;
 		}
 
-        IEnumerable<ConsultaDTO> IConsultaService.ObterPorDescricao(string nome)
-        {
-            throw new NotImplementedException();
-        }
-    }
+      
+		public void Remover(int IdConsulta)
+		{
+			var _consulta = _context.Consulta.Find(IdConsulta);
+			_context.Consulta.Remove(_consulta);
+			_context.SaveChanges();
+		}
+	}
 }

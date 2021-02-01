@@ -30,9 +30,9 @@ namespace GestaoAnimalWeb.Controllers
         }
 
         // GET: ConsultaController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int IdConsulta)
         {
-            Consulta consulta = _consultaService.Obter(id);
+            Consulta consulta = _consultaService.Obter(IdConsulta);
             ConsultaModel consultaModel = _mapper.Map<ConsultaModel>(consulta);
             return View(consultaModel);
         }
