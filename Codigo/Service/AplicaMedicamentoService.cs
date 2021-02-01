@@ -39,9 +39,21 @@ namespace Service
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Aplicamedicamento> ObterTodos()
+        public IEnumerable<AplicamedicamentoDTO> ObterTodos()
         {
-            return GetQuery();
+            IQueryable<Aplicamedicamento> aplicamedicamentos = _context.Aplicamedicamento;
+            var query = from aplicamedicamento in aplicamedicamentos
+                        select new AplicamedicamentoDTO
+                        {
+                            IdAplicaMedicamento = aplicamedicamento.IdAplicaMedicamento,
+                            Dosagem = aplicamedicamento.Dosagem,
+                            DataAplicacao = aplicamedicamento.DataAplicacao,
+                            Horario = aplicamedicamento.Horario,
+                            NomeAnimal = aplicamedicamento.IdAnimalNavigation.Nome,
+                            NomeMedicamento = aplicamedicamento.IdMedicamentoNavigation.Nome,
+                            NomePessoa = aplicamedicamento.IdPessoaNavigation.Nome
+                        };
+            return query;
         }
 
         public IEnumerable<AplicamedicamentoDTO> ObterTodosPorNome(string nome)
