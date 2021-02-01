@@ -30,9 +30,9 @@ namespace GestaoAnimalWeb.Controllers
         }
 
         // GET: ConsultaController/Details/5
-        public ActionResult Details(int IdConsulta)
+        public ActionResult Details(int id)
         {
-            Consulta consulta = _consultaService.Obter(IdConsulta);
+            Consulta consulta = _consultaService.Obter(id);
             ConsultaModel consultaModel = _mapper.Map<ConsultaModel>(consulta);
             return View(consultaModel);
         }
@@ -57,9 +57,9 @@ namespace GestaoAnimalWeb.Controllers
         }
 
         // GET: ConsultaController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int IdConsulta)
         {
-            Consulta consulta = _consultaService.Obter(id);
+            Consulta consulta = _consultaService.Obter(IdConsulta);
             ConsultaModel consultaModel = _mapper.Map<ConsultaModel>(consulta);
             return View(consultaModel);
         }
@@ -67,7 +67,7 @@ namespace GestaoAnimalWeb.Controllers
         // POST: ConsultaController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, ConsultaModel consultaModel)
+        public ActionResult Edit(int IdConsulta, ConsultaModel consultaModel)
         {
             if (ModelState.IsValid)
             {

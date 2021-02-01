@@ -15,12 +15,6 @@ namespace Service
 		}
 
 
-		
-		
-		
-		
-		
-
 		public void Editar(Consulta consulta)
 		{
 
