@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Core;
 
 namespace Service
@@ -39,23 +40,9 @@ namespace Service
             throw new NotImplementedException();
         }
 
-        public IEnumerable<AgendamedicamentoDTO> ObterTodos()
+        public IEnumerable<Agendamedicamento> ObterTodos()
         {
-            IQueryable<Agendamedicamento> agendamedicamentos = _context.Agendamedicamento;
-            var query = from agendamedicamento in agendamedicamentos
-                        select new AgendamedicamentoDTO
-                        {
-                            IdAgendamento = agendamedicamento.IdAgendamento,
-                            Frequencia = agendamedicamento.Frequencia,
-                            DataInicio = agendamedicamento.DataInicio,
-                            DataTermino = agendamedicamento.DataTermino,
-                            Intervalo = agendamedicamento.Intervalo,
-                            Dosagem = agendamedicamento.Dosagem,
-                            NomePessoa = agendamedicamento.IdPessoaNavigation.Nome,
-                            NomeAnimal = agendamedicamento.IdAnimalNavigation.Nome,
-                            NomeMedicamento = agendamedicamento.IdMedicamentoNavigation.Nome
-                        };
-            return query;
+            return GetQuery();
         }
 
         public IEnumerable<AgendamedicamentoDTO> ObterTodosPorNome(string nome)
@@ -73,8 +60,8 @@ namespace Service
         private IQueryable<Agendamedicamento> GetQuery()
         {
             IQueryable<Agendamedicamento> tb_agendamedicamento = _context.Agendamedicamento;
-            var query = from agendamedicamento in tb_agendamedicamento
-                        select agendamedicamento;
+            var query = from exame in tb_agendamedicamento
+                        select exame;
             return query;
         }
     }
