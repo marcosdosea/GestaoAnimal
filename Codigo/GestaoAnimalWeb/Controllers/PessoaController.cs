@@ -14,12 +14,19 @@ namespace GestaoAnimalWeb.Controllers
     {
         IPessoaService _pessoaService;
         IMapper _mapper;
+
+        public PessoaController (IPessoaService pessoaService, IMapper mapper)
+        {
+            _pessoaService = pessoaService;
+            _mapper = mapper;
+        }
+
         // GET: PessoaController
         public ActionResult Index()
         {
             var listaPessoas = _pessoaService.ObterTodos();
             var listaPessoasModel = _mapper.Map<List<PessoaModel>>(listaPessoas);
-            return View(listaPessoas);
+            return View(listaPessoasModel);
  
         }
 

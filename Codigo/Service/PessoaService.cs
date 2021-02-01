@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Service
 {
-    class PessoaService : IPessoaService
+    public class PessoaService : IPessoaService
     {
         private readonly GestaoAnimalContext _context;
 

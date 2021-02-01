@@ -1,13 +1,13 @@
 ﻿@model GestaoAnimalWeb.Models.PessoaModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Consultar";
 }
 
-<h1>Details</h1>
+<h1>Consultar Pessoa</h1>
 
 <div>
-    <h4>PessoaModel</h4>
+    <h4>Pessoa</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -64,6 +64,7 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Sexo)
         </dd>
+        <!--
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Ativo)
         </dt>
@@ -88,9 +89,10 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Crmv)
         </dd>
+        -->
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.IdPessoa  }) |
-    <a asp-action="Index">Back to List</a>
+    @Html.ActionLink("Editar", "Edit", new {  id = Model.IdPessoa  }) |
+    <a asp-action="Index">Voltar a lista</a>
 </div>

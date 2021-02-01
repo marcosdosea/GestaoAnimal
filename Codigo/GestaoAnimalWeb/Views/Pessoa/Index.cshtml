@@ -1,45 +1,45 @@
 ﻿@model IEnumerable<GestaoAnimalWeb.Models.PessoaModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Pessoa";
 }
 
-<h1>Index</h1>
+<h1>Pessoa</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Criar Novo</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <!--th>
                 @Html.DisplayNameFor(model => model.IdPessoa)
+            </th>-->
+            <th>
+                Nome
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                Email
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                Senha
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Senha)
+               Endereco
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Endereco)
+                Telefone
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Telefone)
+                Cpf
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cpf)
+                DataNascimento
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DataNascimento)
+                Sexo
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Sexo)
-            </th>
-            <th>
+            <!--<th>
                 @Html.DisplayNameFor(model => model.Ativo)
             </th>
             <th>
@@ -50,7 +50,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Crmv)
-            </th>
+            </th> -->
             <th></th>
         </tr>
     </thead>
@@ -84,22 +84,25 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Sexo)
             </td>
+           
             <td>
-                @Html.DisplayFor(modelItem => item.Ativo)
+                 <!--@Html.DisplayFor(modelItem => item.Ativo)-->
+            </td> 
+            <td>
+                <!-- @Html.DisplayFor(modelItem => item.TipoPessoa) -->
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TipoPessoa)
+               <!-- @Html.DisplayFor(modelItem => item.Cnpj) -->
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Cnpj)
-            </td>
+               <!-- @Html.DisplayFor(modelItem => item.Crmv) -->
+            </td> 
+            
+        
             <td>
-                @Html.DisplayFor(modelItem => item.Crmv)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.IdPessoa  }) |
-                @Html.ActionLink("Details", "Details", new { id=item.IdPessoa }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.IdPessoa })
+                @Html.ActionLink("Editar", "Edit", new {  id=item.IdPessoa  }) |
+                @Html.ActionLink("Consultar", "Details", new { id=item.IdPessoa }) |
+                @Html.ActionLink("Deletar", "Delete", new { id=item.IdPessoa })
             </td>
         </tr>
 }

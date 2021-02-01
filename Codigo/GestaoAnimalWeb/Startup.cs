@@ -40,6 +40,7 @@ namespace GestaoAnimalWeb
             services.AddTransient<IExameService, ExameService>();
             services.AddTransient<IAgendamedicamentoService, AgendamedicamentoService>();
             services.AddTransient<IEspecieAnimalService, EspecieAnimalService>();
+            services.AddTransient<IPessoaService, PessoaService>();
 
             services.AddAutoMapper(typeof(Startup).Assembly);
         }
