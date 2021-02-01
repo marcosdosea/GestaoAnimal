@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<GestaoAnimalWeb.Models.AnimalModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Animais";
 }
 
 <h1>Index</h1>
@@ -33,18 +33,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Peso)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Foto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Castrado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Falecido)
-            </th>
+           
             <th>
                 @Html.DisplayNameFor(model => model.IdPessoa)
             </th>
@@ -78,18 +67,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Peso)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Foto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Castrado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Falecido)
-            </td>
+           
             <td>
                 @Html.DisplayFor(modelItem => item.IdPessoa)
             </td>
