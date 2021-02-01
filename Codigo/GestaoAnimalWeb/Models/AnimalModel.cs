@@ -24,7 +24,13 @@ namespace GestaoAnimalWeb.Models
         public float? Peso { get; set; }
         public byte[] Foto { get; set; }
         public string Status { get; set; }
+
+         [Range(0, 1, 
+        ErrorMessage = "O Valor para este campo deve ser 1 para animal castrado e 0 para NÃO castrado")]
         public byte? Castrado { get; set; }
+
+        [Range(0, 1,
+        ErrorMessage = "O Valor para este campo deve ser 1 para animal falecido e 0 para NÃO falecido")]
         public byte? Falecido { get; set; }
         [Display(Name = "Dono")]
         [Required(ErrorMessage = "Dono não pode estar vazio.")]
