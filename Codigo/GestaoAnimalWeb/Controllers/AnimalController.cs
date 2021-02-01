@@ -24,14 +24,14 @@ namespace GestaoAnimalWeb.Controllers
         public ActionResult Index()
         {
             var listaAnimais = _animalService.ObterTodos();
-            var listalistaAnimaisModel = _mapper.Map<List<AnimalModel>>(listaAnimais);
-            return View(listalistaAnimaisModel);
+            var listaAnimaisModel = _mapper.Map<List<AnimalModel>>(listaAnimais);
+            return View(listaAnimaisModel);
         }
 
         // GET: AnimalController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int IdAnimal)
         {
-            Animal animal = _animalService.Obter(id);
+            Animal animal = _animalService.Obter(IdAnimal);
             AnimalModel animalModel = _mapper.Map<AnimalModel>(animal);
             return View(animalModel);
         }
