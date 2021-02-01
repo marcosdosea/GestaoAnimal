@@ -2,6 +2,7 @@
 using Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Models;
 using System.Collections.Generic;
 
@@ -11,11 +12,17 @@ namespace GestaoAnimalWeb.Controllers
     public class ExameController : Controller
     {
         IExameService _exameService;
+        IConsultaService _consultaService;
+        IAnimalService _animalService;
+        ITipoexameService _tipoexameService;
         IMapper _mapper;
 
-        public ExameController(IExameService exameService, IMapper mapper)
+        public ExameController(IExameService exameService, IConsultaService consultaService, IAnimalService animalService, ITipoexameService tipoexameService, IMapper mapper)
         {
             _exameService = exameService;
+            _consultaService = consultaService;
+            _animalService = animalService;
+            _tipoexameService = tipoexameService;
             _mapper = mapper;
         }
 
@@ -23,14 +30,22 @@ namespace GestaoAnimalWeb.Controllers
         public ActionResult Index()
         {
             var listaExames = _exameService.ObterTodos();
-            var examesModel = _mapper.Map<List<ExameModel>>(listaExames);
-            return View(examesModel);
+            return View(listaExames);
         }
+
 
         // GET: ExameController/Details/5
         public ActionResult Details(int id)
         {
             Exame exame = _exameService.Obter(id);
+            Consulta consulta = _consultaService.Obter(exame.IdConsulta);
+            Animal animal = _animalService.Obter(exame.IdAnimal);
+            Tipoexame tipoExame = _tipoexameService.Obter(exame.IdTipoExame);
+
+            ViewBag.IdConsulta = consulta.Descricao;
+            ViewBag.IdAnimal = animal.Nome;
+            ViewBag.IdTipoExame = tipoExame.Tipo;
+
             ExameModel exameModel = _mapper.Map<ExameModel>(exame);
             return View(exameModel);
         }
@@ -38,6 +53,13 @@ namespace GestaoAnimalWeb.Controllers
         // GET: ExameController/Create
         public ActionResult Create()
         {
+            IEnumerable<Consulta> listaConsultas = _consultaService.ObterTodos();
+            IEnumerable<Animal> listaAnimais = _animalService.ObterTodos();
+            IEnumerable<Tipoexame> listaTipoexames = _tipoexameService.ObterTodos();
+
+            ViewBag.IdConsulta = new SelectList(listaConsultas, "IdConsulta", "Descricao", null);
+            ViewBag.IdAnimal = new SelectList(listaAnimais, "IdAnimal", "Nome", null);
+            ViewBag.IdTipoExame = new SelectList(listaTipoexames, "IdTipoExame", "Tipo", null);
             return View();
         }
 
@@ -57,7 +79,15 @@ namespace GestaoAnimalWeb.Controllers
         // GET: ExameController/Edit/5
         public ActionResult Edit(int id)
         {
+            IEnumerable<Consulta> listaConsultas = _consultaService.ObterTodos();
+            IEnumerable<Animal> listaAnimais = _animalService.ObterTodos();
+            IEnumerable<Tipoexame> listaTipoexames = _tipoexameService.ObterTodos();
             Exame exame = _exameService.Obter(id);
+
+            ViewBag.IdConsulta = new SelectList(listaConsultas, "IdConsulta", "Descricao", null);
+            ViewBag.IdAnimal = new SelectList(listaAnimais, "IdAnimal", "Nome", null);
+            ViewBag.IdTipoExame = new SelectList(listaTipoexames, "IdTipoExame", "Tipo", null);
+            
             ExameModel exameModel = _mapper.Map<ExameModel>(exame);
             return View(exameModel);
         }
@@ -80,6 +110,14 @@ namespace GestaoAnimalWeb.Controllers
         public ActionResult Delete(int id)
         {
             Exame exame = _exameService.Obter(id);
+            Consulta consulta = _consultaService.Obter(exame.IdConsulta);
+            Animal animal = _animalService.Obter(exame.IdAnimal);
+            Tipoexame tipoExame = _tipoexameService.Obter(exame.IdTipoExame);
+
+            ViewBag.IdConsulta = consulta.Descricao;
+            ViewBag.IdAnimal = animal.Nome;
+            ViewBag.IdTipoExame = tipoExame.Tipo;
+
             ExameModel exameModel = _mapper.Map<ExameModel>(exame);
             return View(exameModel);
         }

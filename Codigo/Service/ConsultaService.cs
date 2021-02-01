@@ -49,8 +49,7 @@ namespace Service
 		/// Remove um autor da base de dados
 		/// </summary>
 		/// <param name="idAutor">identificado do autor</param>
-		
-		
+
 		/// <summary>
 		/// Consulta genérica aos dados do autor
 		/// </summary>

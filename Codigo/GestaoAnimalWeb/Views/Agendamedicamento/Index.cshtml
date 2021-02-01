@@ -1,10 +1,10 @@
-﻿@model IEnumerable<Models.AgendamedicamentoModel>
+﻿@model IEnumerable<Core.AgendamedicamentoDTO>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Agendamentos</h1>
 
 <p>
     <a asp-action="Create">Criar Novo Agendamento</a>
@@ -13,34 +13,34 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.IdAgendamento)
+                Código
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Frequencia)
+                Frequência
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DataInicio)
+                Data de Início
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DataTermino)
+                Data de Término
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Intervalo)
+                Intervalo
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdPessoa)
+                Pessoa
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdAnimal)
+                Animal
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdMedicamento)
+                Medicamento
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdConsulta)
+                Consulta
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Dosagem)
+                Dosagem
             </th>
             <th></th>
         </tr>
@@ -64,24 +64,24 @@
                 @Html.DisplayFor(modelItem => item.Intervalo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdPessoa)
+                @Html.DisplayFor(modelItem => item.NomePessoa)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdAnimal)
+                @Html.DisplayFor(modelItem => item.NomeAnimal)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdMedicamento)
+                @Html.DisplayFor(modelItem => item.NomeMedicamento)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdConsulta)
+                @Html.DisplayFor(modelItem => item.NomeConsulta)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Dosagem)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.IdAgendamento }) |
-                @Html.ActionLink("Details", "Details", new { id = item.IdAgendamento }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.IdAgendamento })
+                @Html.ActionLink("Editar", "Edit", new { id=item.IdAgendamento }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.IdAgendamento }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.IdAgendamento })
             </td>
         </tr>
 }
