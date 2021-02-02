@@ -4,10 +4,10 @@
     ViewData["Title"] = "Animais";
 }
 
-<h1>Index</h1>
+<h1>Animais</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Criar Novo Animal</a>
 </p>
 <table class="table">
     <thead>
@@ -19,7 +19,7 @@
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Especie)
+                @Html.DisplayNameFor(model => model.IdEspecieAnimal)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Raca)
@@ -53,7 +53,7 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Especie)
+                @Html.DisplayFor(modelItem => item.IdEspecieAnimal)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Raca)
@@ -75,9 +75,9 @@
                 @Html.DisplayFor(modelItem => item.IdOrganizacao)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {id=item.IdAnimal }) |
-                @Html.ActionLink("Details", "Details", new { id = item.IdAnimal }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.IdAnimal })
+                @Html.ActionLink("Editar", "Edit", new {id=item.IdAnimal }) |
+                @Html.ActionLink("Consultar", "Details", new { id = item.IdAnimal }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.IdAnimal })
             </td>
         </tr>
 }

@@ -33,6 +33,9 @@ namespace GestaoAnimalWeb.Controllers
         public ActionResult Details(int id)
         {
             Animal animal = _animalService.Obter(id);
+            Animal dono = _animalService.Obter(animal.IdPessoa);
+            Animal especie = _animalService.Obter(animal.IdEspecieAnimal);
+            Animal organizacao = _animalService.Obter(animal.IdOrganizacao);
             AnimalModel animalModel = _mapper.Map<AnimalModel>(animal);
             return View(animalModel);
         }

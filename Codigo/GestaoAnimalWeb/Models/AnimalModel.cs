@@ -11,7 +11,9 @@ namespace GestaoAnimalWeb.Models
     {
         public int IdAnimal { get; set; }
         public string Nome { get; set; }
-        public string Especie { get; set; }
+        [Display(Name = "Espécie")]
+        [Required(ErrorMessage = "Selecione uma espécie para o animal.")]
+        public int IdEspecieAnimal { get; set; }
         public string Raca { get; set; }
 
         [Display(Name = "Data de Nascimento")]
@@ -25,11 +27,17 @@ namespace GestaoAnimalWeb.Models
         public float? Peso { get; set; }
         public byte[] Foto { get; set; }
         public string Status { get; set; }
+        [Range(0, 1,
+        ErrorMessage = "Este campo só aceita valor 1 para Castrado e 0  para NÃO Castrado")]
         public byte? Castrado { get; set; }
+        [Range(0, 1,
+        ErrorMessage = "Este campo só aceita valor 1 para Castrado e 0  para NÃO Castrado")]
         public byte? Falecido { get; set; }
         [Display(Name = "Dono")]
         [Required(ErrorMessage = "Selecione um dono para o animal.")]
         public int IdPessoa { get; set; }
+        [Display(Name = "Organização")]
+        [Required(ErrorMessage = "Selecione uma organização para o animal.")]
         public int IdOrganizacao { get; set; }
       
        

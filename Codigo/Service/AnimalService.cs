@@ -66,6 +66,22 @@ namespace Service
 		/// Obtém todos os autores
 		/// </summary>
 		/// <returns></returns>
+		public IEnumerable<AnimalDTO> ObterTodosAnimais()
+		{
+			IQueryable<Animal> animais = _context.Animal;
+			var query = from animal in animais
+						select new AnimalDTO
+						{
+							IdAnimal = animal.IdAnimal,
+							Nome = animal.Nome,
+							Raca = animal.Raca,
+							Sexo = animal.Sexo,
+							IdEspecieAnimal = animal.IdEspecieAnimal,
+							IdOrganizacao = animal.IdOrganizacao,
+							IdPessoa = animal.IdPessoa
+						};
+			return query;
+		}
 		public IEnumerable<Animal> ObterTodos()
 		{
 			return GetQuery();

@@ -9,7 +9,7 @@ namespace Core
         void Editar(Animal animal);
         int Inserir(Animal animal);
         Animal Obter(int idAnimal);
-        IEnumerable<AnimalDTO> ObterTodosPorNome(string nome);
+        IEnumerable<AnimalDTO> ObterTodosAnimais();
         IEnumerable<Animal> ObterTodos();
         void Remover(int idAnimal);
         IEnumerable<AnimalDTO> ObterPorNomeOrdenadoDescending(string nome);
