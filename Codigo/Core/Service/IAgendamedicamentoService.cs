@@ -10,7 +10,7 @@ namespace Core
         int Inserir(Agendamedicamento agendamento);
         Agendamedicamento Obter(int idAgendamento);
         IEnumerable<AgendamedicamentoDTO> ObterTodosPorNome(string nome);
-        IEnumerable<Agendamedicamento> ObterTodos();
+        IEnumerable<AgendamedicamentoDTO> ObterTodos();
         void Remover(int idAgendamento);
         IEnumerable<Agendamedicamento> ObterPorNomeOrdenadoDescending(string nome);
     }
