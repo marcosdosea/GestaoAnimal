@@ -3,12 +3,13 @@ using Core;
 using GestaoAnimalWeb.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GestaoAnimalWeb.Controllers
+namespace Controllers
 {
     public class PessoaController : Controller
     {
