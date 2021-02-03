@@ -14,13 +14,15 @@ namespace GestaoAnimalWeb.Controllers
        
     {
         IConsultaService _consultaService;
+        IAnimalService _animalService;
         IMapper _mapper;
         // GET: ConsultaController
 
-        public ConsultaController(IConsultaService consultaService, IMapper mapper)
+        public ConsultaController(IConsultaService consultaService, IMapper mapper, IAnimalService animalService)
         {
             _consultaService = consultaService;
             _mapper = mapper;
+            _animalService = animalService;
         }
         public ActionResult Index()
         {
@@ -34,6 +36,7 @@ namespace GestaoAnimalWeb.Controllers
         {
             Consulta consulta = _consultaService.Obter(id);
             ConsultaModel consultaModel = _mapper.Map<ConsultaModel>(consulta);
+            Animal animal = _animalService.Obter(consulta.IdAnimal);
             return View(consultaModel);
         }
 
@@ -82,6 +85,8 @@ namespace GestaoAnimalWeb.Controllers
         {
             Consulta consulta = _consultaService.Obter(id);
             ConsultaModel consultaModel = _mapper.Map<ConsultaModel>(consulta);
+            Animal animal = _animalService.Obter(consulta.IdAnimal);
+            ViewBag.Animal = animal.Nome;
             return View(consultaModel);
         }
 

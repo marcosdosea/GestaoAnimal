@@ -39,21 +39,7 @@ namespace Service
 
 			return consultas.ElementAtOrDefault(0);
 		}
-		/// <summary>
-		/// Atualiza os dados do autor na base de dados
-		/// </summary>
-		/// <param name="autor">dados do autor</param>
-
-
-		/// <summary>
-		/// Remove um autor da base de dados
-		/// </summary>
-		/// <param name="idAutor">identificado do autor</param>
-
-		/// <summary>
-		/// Consulta genérica aos dados do autor
-		/// </summary>
-		/// <returns></returns>
+		
 		private IQueryable<Consulta> GetQuery()
 		{
 			IQueryable<Consulta> Consulta = _context.Consulta;
@@ -62,9 +48,6 @@ namespace Service
 			return query;
 		}
 
-
-		
-		
 
 		/// <summary>
 		/// Obtém todos os autores

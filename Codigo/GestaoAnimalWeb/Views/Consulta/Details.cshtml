@@ -1,13 +1,13 @@
 ﻿@model GestaoAnimalWeb.Models.ConsultaModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detailhes de uma consulta";
 }
 
-<h1>Details</h1>
+<h1>Detalhes</h1>
 
 <div>
-    <h4>ConsultaModel</h4>
+    
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -37,8 +37,8 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Preco)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Preco)
+        <dd class="col-sm-10">
+            @ViewBag.Animal
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.IdAnimal)
