@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GestaoAnimalWeb.Models.AnimalModel>
+﻿@model IEnumerable<Core.AnimalDTO>
 
 @{
     ViewData["Title"] = "Animais";
@@ -19,7 +19,7 @@
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdEspecieAnimal)
+                Especie
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Raca)
@@ -33,12 +33,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.Peso)
             </th>
-           
             <th>
-                @Html.DisplayNameFor(model => model.IdPessoa)
+                Pessoa
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdOrganizacao)
+               Organização
             </th>
             <th></th>
         </tr>
@@ -53,7 +52,7 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdEspecieAnimal)
+                @Html.DisplayFor(modelItem => item.EspecieAnimal)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Raca)
@@ -69,10 +68,10 @@
             </td>
            
             <td>
-                @Html.DisplayFor(modelItem => item.IdPessoa)
+                <!--AQUI SERÁ DADOS DA PESSOA-->
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdOrganizacao)
+               <!--AQUI SERÁ DADOS DA ORGANIZAÇÃO-->
             </td>
             <td>
                 @Html.ActionLink("Editar", "Edit", new {id=item.IdAnimal }) |

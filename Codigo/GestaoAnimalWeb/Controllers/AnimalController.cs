@@ -7,6 +7,7 @@ using Core;
 using GestaoAnimalWeb.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GestaoAnimalWeb.Controllers
 {
@@ -14,28 +15,34 @@ namespace GestaoAnimalWeb.Controllers
     {
         IAnimalService _animalService;
         IMapper _mapper;
+        IEspecieAnimalService _especieAnimalService;
+        //IOrganizacaoService _organizacaoService;
 
-        public AnimalController(IAnimalService animalService, IMapper mapper)
+
+        public AnimalController(IAnimalService animalService, IEspecieAnimalService especieAnimalService,  IMapper mapper)
         {
             _animalService = animalService;
+            _especieAnimalService = especieAnimalService;
+           // _organizacaoService = organizacaoService;
             _mapper = mapper;
         }
         // GET: AnimalController
         public ActionResult Index()
         {
-            var listaAnimais = _animalService.ObterTodos();
-           
-            var listalistaAnimaisModel = _mapper.Map<List<AnimalModel>>(listaAnimais);
-            return View(listalistaAnimaisModel);
+            var listaAnimais = _animalService.ObterTodosAnimais();
+     
+            return View(listaAnimais);
         }
 
         // GET: AnimalController/Details/5
         public ActionResult Details(int id)
         {
             Animal animal = _animalService.Obter(id);
-            Animal dono = _animalService.Obter(animal.IdPessoa);
-            Animal especie = _animalService.Obter(animal.IdEspecieAnimal);
-            Animal organizacao = _animalService.Obter(animal.IdOrganizacao);
+           // Pessoa dono = _pessoaService.Obter(dono.Nome.);
+            Especieanimal especie = _especieAnimalService.Obter(animal.IdEspecieAnimal);
+           // Organizacao organizacao = _organizacaoService.Obter(animal.IdOrganizacao);
+            ViewBag.EspecieAnimal = especie.Nome;
+            //ViewBag.Organizacao = organizacao.Nome;
             AnimalModel animalModel = _mapper.Map<AnimalModel>(animal);
             return View(animalModel);
         }
@@ -43,6 +50,8 @@ namespace GestaoAnimalWeb.Controllers
         // GET: AnimalController/Create
         public ActionResult Create()
         {
+            IEnumerable<Especieanimal> listaEspecies = _especieAnimalService.ObterTodos();
+            ViewBag.EspecieAnimal = new SelectList(listaEspecies, "IdEspecieAnimal", "Nome", null);
             return View();
         }
 
@@ -64,6 +73,8 @@ namespace GestaoAnimalWeb.Controllers
         {
             Animal animal = _animalService.Obter(id);
             AnimalModel animalModel = _mapper.Map<AnimalModel>(animal);
+            IEnumerable<Especieanimal> listaEspecies = _especieAnimalService.ObterTodos();
+            ViewBag.EspecieAnimal = new SelectList(listaEspecies, "IdEspecieAnimal", "Nome", null);
             return View(animalModel);
         }
 
@@ -85,6 +96,8 @@ namespace GestaoAnimalWeb.Controllers
         {
             Animal animal = _animalService.Obter(id);
             AnimalModel animalModel = _mapper.Map<AnimalModel>(animal);
+            Especieanimal especie = _especieAnimalService.Obter(animal.IdEspecieAnimal);
+            ViewBag.EspecieAnimal = especie.Nome;
             return View(animalModel);
         }
 

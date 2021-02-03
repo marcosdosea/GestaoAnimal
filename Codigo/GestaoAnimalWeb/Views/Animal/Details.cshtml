@@ -22,11 +22,11 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Nome)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.IdEspecieAnimal)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdEspecieAnimal)
+           @ViewBag.EspecieAnimal
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Raca)
@@ -83,7 +83,7 @@
             @Html.DisplayFor(model => model.IdPessoa)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdOrganizacao)
+            Organizacao
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.IdOrganizacao)
