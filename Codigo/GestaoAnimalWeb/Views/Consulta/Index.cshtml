@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GestaoAnimalWeb.Models.ConsultaModel>
+﻿@model IEnumerable<Core.ConsultaDTO>
 
 @{
     ViewData["Title"] = "Consultas";
@@ -7,7 +7,7 @@
 <h1>Consultas</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Criar Nova Consulta</a>
 </p>
 <table class="table">
     <thead>
@@ -28,7 +28,7 @@
                 @Html.DisplayNameFor(model => model.Preco)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdAnimal)
+                Nome
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.IdPessoa)

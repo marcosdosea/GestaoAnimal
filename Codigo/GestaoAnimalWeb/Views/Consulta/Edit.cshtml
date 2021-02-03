@@ -1,10 +1,10 @@
 ﻿@model GestaoAnimalWeb.Models.ConsultaModel
 
 @{
-    ViewData["Title"] = "Editar uma Consulya";
+    ViewData["Title"] = "Editar uma Consula";
 }
 
-<h1>Edit</h1>
+<h1>Editar uma consulta</h1>
 
 <!--<h4>ConsultaModel</h4>-->
 <hr />
@@ -39,7 +39,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="IdAnimal" class="control-label"></label>
-                <input asp-for="IdAnimal" class="form-control" />
+                <select asp-for="IdAnimal" asp-items="ViewBag.Animal" class="form-control"></select>
                 <span asp-validation-for="IdAnimal" class="text-danger"></span>
             </div>
             <div class="form-group">

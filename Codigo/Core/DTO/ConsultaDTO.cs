@@ -4,6 +4,7 @@ namespace Core
 {
     public class ConsultaDTO
     {
+        public int IdConsulta { get; set; }
         public string Descricao { get; set; }
         public TimeSpan Horario { get; set; }
         public DateTime Data { get; set; }

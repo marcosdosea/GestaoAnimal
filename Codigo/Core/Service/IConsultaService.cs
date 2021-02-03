@@ -9,8 +9,9 @@ namespace Core
         void Editar(Consulta consulta);
         int Inserir(Consulta consulta);
         Consulta Obter(int idConsulta);
-        IEnumerable<ConsultaDTO> ObterPorDescricao(string nome);
+        IEnumerable<Consulta> ObterPorDescricao(string nome);
         IEnumerable<Consulta> ObterTodos();
+        IEnumerable<ConsultaDTO> ObterTodasConsultas();
         void Remover(int idConsulta);
         //IEnumerable<ConsultaDTO> ObterPorNomeOrdenadoDescending(string nome);
     }

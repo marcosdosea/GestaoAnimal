@@ -1,7 +1,7 @@
 ﻿@model GestaoAnimalWeb.Models.ConsultaModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes de uma consulta";
 }
 
 <h1>Details</h1>
@@ -43,8 +43,8 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.IdAnimal)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdAnimal)
+        <dd class="col-sm-10">
+            @ViewBag.Animal
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.IdPessoa)

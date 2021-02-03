@@ -9,9 +9,11 @@ namespace Service
     public class ConsultaService:IConsultaService
     {
 		private readonly GestaoAnimalContext _context;
+		
 		public ConsultaService(GestaoAnimalContext context)
 		{
 			_context = context;
+
 		}
 
 
@@ -21,7 +23,7 @@ namespace Service
 
 
 		/// <summary>
-		/// Insere um novo autor no base de dados
+		/// Insere uma nova consulta no base de dados
 		/// </summary>
 		/// <param name="autor">dados do autor</param>
 		/// <returns></returns>
@@ -53,12 +55,10 @@ namespace Service
 			_context.Consulta.Remove(_consulta);
 			_context.SaveChanges();
 		}
-		public Consulta Obter(int IdConsulta)
+		public Consulta Obter(int idConsulta)
 		{
-			IQueryable<Consulta> consultas = _context.Consulta;
-			var query = from consulta in consultas
-						where consulta.IdConsulta.Equals(IdConsulta)
-						select consultas;
+			IEnumerable<Consulta> consultas = GetQuery().Where(consultaModel => consultaModel.IdConsulta.Equals(idConsulta));
+
 			return consultas.ElementAtOrDefault(0);
 		}
 		/// <summary>
@@ -104,9 +104,22 @@ namespace Service
 			return consultas;
 		}
 
-        IEnumerable<ConsultaDTO> IConsultaService.ObterPorDescricao(string nome)
+		
+
+		public IEnumerable<ConsultaDTO> ObterTodasConsultas()
         {
-            throw new NotImplementedException();
-        }
+			IQueryable<Consulta> consultas = _context.Consulta;
+			var query = from consulta in consultas
+						select new ConsultaDTO
+						{
+							Descricao = consulta.Descricao,
+							Horario = consulta.Horario,
+							Data = consulta.Data,
+							Preco = consulta.Preco,
+							IdAnimal = consulta.IdAnimal
+
+						};
+			return query;
+		}
     }
 }
