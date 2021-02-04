@@ -26,7 +26,10 @@ namespace GestaoAnimalWeb.Models
         [Display(Name = "Dono")]
         [Required(ErrorMessage = "Selecione um dono para o animal.")]
         public int IdPessoa { get; set; }
+        public virtual Animal IdAnimalNavigation { get; set; }
+        public virtual Pessoa IdPessoaNavigation { get; set; }
+        public virtual ICollection<Agendamedicamento> Agendamedicamento { get; set; }
+        public virtual ICollection<Exame> Exame { get; set; }
 
-      
     }
 }
