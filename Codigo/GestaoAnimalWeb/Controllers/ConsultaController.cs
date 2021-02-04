@@ -70,7 +70,7 @@ namespace GestaoAnimalWeb.Controllers
             IEnumerable<Animal> listaAnimais = _animalService.ObterTodos();
             ConsultaModel consultaModel = _mapper.Map<ConsultaModel>(consulta);
             IEnumerable<ConsultaDTO> listaConsultas = _consultaService.ObterTodasConsultas();
-            ViewBag.Animal = new SelectList(listaConsultas, "IdAnimal", "Nome", null);
+            ViewBag.Animal = new SelectList(listaAnimais, "IdAnimal", "Nome", null);
             return View(consultaModel);
           
         }
