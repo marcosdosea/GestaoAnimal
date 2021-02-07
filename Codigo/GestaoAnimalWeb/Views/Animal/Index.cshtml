@@ -1,13 +1,13 @@
-﻿@model IEnumerable<GestaoAnimalWeb.Models.AnimalModel>
+﻿@model IEnumerable<Core.AnimalDTO>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Animais";
 }
 
-<h1>Index</h1>
+<h1>Animais</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Criar Novo Animal</a>
 </p>
 <table class="table">
     <thead>
@@ -19,7 +19,7 @@
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Especie)
+                Especie
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Raca)
@@ -34,22 +34,10 @@
                 @Html.DisplayNameFor(model => model.Peso)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Foto)
+                Pessoa
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Castrado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Falecido)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdPessoa)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdOrganizacao)
+               Organização
             </th>
             <th></th>
         </tr>
@@ -64,7 +52,7 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Especie)
+                @Html.DisplayFor(modelItem => item.EspecieAnimal)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Raca)
@@ -78,28 +66,17 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Peso)
             </td>
+           
             <td>
-                @Html.DisplayFor(modelItem => item.Foto)
+                <!--AQUI SERÁ DADOS DA PESSOA-->
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Status)
+               <!--AQUI SERÁ DADOS DA ORGANIZAÇÃO-->
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Castrado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Falecido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdPessoa)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdOrganizacao)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {id=item.IdAnimal }) |
-                @Html.ActionLink("Details", "Details", new { id = item.IdAnimal }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.IdAnimal })
+                @Html.ActionLink("Editar", "Edit", new {id=item.IdAnimal }) |
+                @Html.ActionLink("Consultar", "Details", new { id = item.IdAnimal }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.IdAnimal })
             </td>
         </tr>
 }
