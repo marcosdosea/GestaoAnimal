@@ -6,17 +6,12 @@
 
 <h1>Editar</h1>
 
-
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <!--<div class="form-group">
-        <label asp-for="IdConsulta" class="control-label"></label>
-        <input asp-for="IdConsulta" class="form-control" />
-        <span asp-validation-for="IdConsulta" class="text-danger"></span>
-    </div>-->
+            @Html.HiddenFor(model => model.IdConsulta)
             <div class="form-group">
                 <label asp-for="Descricao" class="control-label"></label>
                 <input asp-for="Descricao" class="form-control" />
