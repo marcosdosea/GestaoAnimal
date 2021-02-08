@@ -12,25 +12,25 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.IdConsulta)
+               Código
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Descricao)
+               Descrição
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Horario)
+                Horário
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Data)
+               Data
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Preco)
+               Preço
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdAnimal)
+               Animal
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdPessoa)
+                Dono
             </th>
             <th></th>
         </tr>
@@ -60,9 +60,9 @@
                 @Html.DisplayFor(modelItem => item.IdPessoa)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.IdConsulta }) |
-                @Html.ActionLink("Details", "Details", new { id = item.IdConsulta }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.IdConsulta })
+                @Html.ActionLink("Editar", "Edit", new { id=item.IdConsulta }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.IdConsulta }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.IdConsulta })
             </td>
         </tr>
 }
