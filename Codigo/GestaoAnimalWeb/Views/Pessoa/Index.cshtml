@@ -21,9 +21,9 @@
             <th>
                 Email
             </th>
-            <th>
+            <!--th>
                 Senha
-            </th>
+            </th> -->
             <th>
                Endereco
             </th>
@@ -39,10 +39,10 @@
             <th>
                 Sexo
             </th>
-            <!--<th>
-                @Html.DisplayNameFor(model => model.Ativo)
-            </th>
             <th>
+                Ativo
+            </th>
+            <!--<th>
                 @Html.DisplayNameFor(model => model.TipoPessoa)
             </th>
             <th>
@@ -50,15 +50,14 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Crmv)
-            </th> -->
+            </th>-->
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <!-- 
-            <td>
+            <!--td>
                 @Html.DisplayFor(modelItem => item.IdPessoa)
             </td> -->
             <td>
@@ -67,9 +66,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
-            <td>
+            <!--td>
                 @Html.DisplayFor(modelItem => item.Senha)
-            </td>
+            </td> -->
             <td>
                 @Html.DisplayFor(modelItem => item.Endereco)
             </td>
@@ -85,19 +84,18 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Sexo)
             </td>
-           
             <td>
-                 <!--@Html.DisplayFor(modelItem => item.Ativo)-->
+                @Html.DisplayFor(modelItem => item.Ativo)
             </td> 
-            <td>
-                <!-- @Html.DisplayFor(modelItem => item.TipoPessoa) -->
+            <!--<td>
+                @Html.DisplayFor(modelItem => item.TipoPessoa)
             </td>
             <td>
-               <!-- @Html.DisplayFor(modelItem => item.Cnpj) -->
+               @Html.DisplayFor(modelItem => item.Cnpj)
             </td>
             <td>
-               <!-- @Html.DisplayFor(modelItem => item.Crmv) -->
-            </td> 
+               @Html.DisplayFor(modelItem => item.Crmv)
+            </td>-->
             
         
             <td>
