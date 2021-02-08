@@ -3,6 +3,7 @@ using Core;
 using GestaoAnimalWeb.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Models;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,13 @@ namespace Controllers
         // GET: PessoaController/Create
         public ActionResult Create()
         {
+            var generos = new[]
+            {
+                new SelectListItem { Value = "M", Text = "Masculino" },
+                new SelectListItem { Value = "F", Text = "Feminino" },
+                new SelectListItem { Value = "O", Text = "Outro" },
+            };  
+            ViewBag.Generos = new SelectList(generos, "Value", "Text");
             return View();
         }
 
@@ -63,6 +71,13 @@ namespace Controllers
         {
             Pessoa pessoa = _pessoaService.Obter(id);
             PessoaModel pessoaModel = _mapper.Map<PessoaModel>(pessoa);
+            var generos = new[]
+            {
+                new SelectListItem { Value = "M", Text = "Masculino" },
+                new SelectListItem { Value = "F", Text = "Feminino" },
+                new SelectListItem { Value = "O", Text = "Outro" },
+            };
+            ViewBag.Generos = new SelectList(generos, "Value", "Text");
             return View(pessoaModel);
         }
 

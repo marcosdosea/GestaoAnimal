@@ -7,23 +7,17 @@
 <h1>Pessoa</h1>
 
 <p>
-    <a asp-action="Create">Criar Novo</a>
+    <a asp-action="Create">Criar Nova Pessoa</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <!--th>
-                @Html.DisplayNameFor(model => model.IdPessoa)
-            </th>-->
             <th>
                 Nome
             </th>
             <th>
                 Email
             </th>
-            <!--th>
-                Senha
-            </th> -->
             <th>
                Endereco
             </th>
@@ -31,44 +25,23 @@
                 Telefone
             </th>
             <th>
-                Cpf
-            </th>
-            <th>
-                DataNascimento
+                CPF
             </th>
             <th>
                 Sexo
             </th>
-            <th>
-                Ativo
-            </th>
-            <!--<th>
-                @Html.DisplayNameFor(model => model.TipoPessoa)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cnpj)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crmv)
-            </th>-->
-            <th></th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <!--td>
-                @Html.DisplayFor(modelItem => item.IdPessoa)
-            </td> -->
             <td>
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
-            <!--td>
-                @Html.DisplayFor(modelItem => item.Senha)
-            </td> -->
             <td>
                 @Html.DisplayFor(modelItem => item.Endereco)
             </td>
@@ -79,25 +52,8 @@
                 @Html.DisplayFor(modelItem => item.Cpf)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DataNascimento)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Sexo)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ativo)
-            </td> 
-            <!--<td>
-                @Html.DisplayFor(modelItem => item.TipoPessoa)
-            </td>
-            <td>
-               @Html.DisplayFor(modelItem => item.Cnpj)
-            </td>
-            <td>
-               @Html.DisplayFor(modelItem => item.Crmv)
-            </td>-->
-            
-        
             <td>
                 @Html.ActionLink("Editar", "Edit", new {  id=item.IdPessoa  }) |
                 @Html.ActionLink("Consultar", "Details", new { id=item.IdPessoa }) |
