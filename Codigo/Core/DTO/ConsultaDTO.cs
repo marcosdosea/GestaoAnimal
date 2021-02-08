@@ -11,5 +11,6 @@ namespace Core
         public double Preco { get; set; }
         public int IdAnimal { get; set; }
         public int IdPessoa { get; set; }
+        public string Animal { get; set; }
     }
 }

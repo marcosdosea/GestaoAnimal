@@ -24,9 +24,9 @@ namespace Service
             _context.Update(consulta);
             _context.SaveChanges();
         }
-        public void Remover(int idConsulta)
+        public void Remover(int IdConsulta)
         {
-            var _consulta = _context.Consulta.Find(idConsulta);
+            var _consulta = _context.Consulta.Find(IdConsulta);
             _context.Consulta.Remove(_consulta);
             _context.SaveChanges();
         }
@@ -59,7 +59,8 @@ namespace Service
                             Data = consulta.Data,
                             Preco = consulta.Preco,
                             IdAnimal = consulta.IdAnimalNavigation.IdAnimal,
-                            IdPessoa = consulta.IdPessoaNavigation.IdPessoa
+                            IdPessoa = consulta.IdPessoaNavigation.IdPessoa,
+                            Animal = consulta.IdAnimalNavigation.Nome
                         };
             return query;
         }

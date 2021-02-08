@@ -67,8 +67,9 @@ namespace GestaoAnimalWeb.Controllers
         public ActionResult Edit(int id)
         {
             Consulta consulta = _consultaService.Obter(id);
-            IEnumerable<Animal> listaAnimais = _animalService.ObterTodos();
             ConsultaModel consultaModel = _mapper.Map<ConsultaModel>(consulta);
+
+            IEnumerable<Animal> listaAnimais = _animalService.ObterTodos();
             IEnumerable<ConsultaDTO> listaConsultas = _consultaService.ObterTodasConsultas();
             ViewBag.Animal = new SelectList(listaAnimais, "IdAnimal", "Nome", null);
             return View(consultaModel);
