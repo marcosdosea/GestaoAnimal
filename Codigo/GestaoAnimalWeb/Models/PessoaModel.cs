@@ -29,7 +29,7 @@ namespace Models
         public string Telefone { get; set; }
 
         [Display(Name = "CPF")]
-        [Required(ErrorMessage = "Nome não pode estar vazio")]
+        [Required(ErrorMessage = "CPF não pode estar vazio")]
         public string Cpf { get; set; }
 
         [Display(Name = "Data de Nascimento")]
@@ -38,7 +38,7 @@ namespace Models
         public DateTime? DataNascimento { get; set; }
 
         [Display (Name ="Sexo")]
-        [Required (ErrorMessage = "Sexo não pode estar ")]
+        [Required (ErrorMessage = "Sexo não pode estar vazio")]
         public string Sexo { get; set; }
         public byte? Ativo { get; set; }
         public string TipoPessoa { get; set; }
