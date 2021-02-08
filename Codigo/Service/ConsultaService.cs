@@ -39,9 +39,9 @@ namespace Service
         }
         public Consulta Obter(int idConsulta)
         {
-            IEnumerable<Consulta> animais = GetQuery().Where(consultaModel => consultaModel.IdAnimal.Equals(idConsulta));
+            IEnumerable<Consulta> consultas = GetQuery().Where(consultaModel => consultaModel.IdConsulta.Equals(idConsulta));
 
-            return animais.ElementAtOrDefault(0);
+            return consultas.ElementAtOrDefault(0);
         }
         public IEnumerable<ConsultaDTO> ObterPorDescricao(string nome)
         {
@@ -53,7 +53,7 @@ namespace Service
             var query = from consulta in consultas
                         select new ConsultaDTO
                         {
-                            IdConsulta = consulta.IdAnimal,
+                            IdConsulta = consulta.IdConsulta,
                             Descricao = consulta.Descricao,
                             Horario = consulta.Horario,
                             Data = consulta.Data,
