@@ -12,16 +12,13 @@
     <thead>
         <tr>
             <th>
-               Código
-            </th>
-            <th>
                Descrição
             </th>
             <th>
-                Horário
+               Data
             </th>
             <th>
-               Data
+                Horário
             </th>
             <th>
                Preço
@@ -32,26 +29,28 @@
             <th>
                 Dono
             </th>
-            <th></th>
+            <th>
+                Ações
+            </th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IdConsulta)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Horario)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Data)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Preco)
+                @Html.DisplayFor(modelItem => item.Horario)
+            </td>
+            <td>
+                @{ 
+                    var precoFormatado = item.Preco.ToString().Concat(" R$");
+                }
+                @Html.DisplayFor(modelItem => precoFormatado)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Animal)
