@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Models.PessoaModel>
+
+@{
+    ViewData["Title"] = "Pessoa";
+}
+
+<h1>Pessoa</h1>
+
+<p>
+    <a asp-action="Create">Criar Nova Pessoa</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+               Endereco
+            </th>
+            <th>
+                Telefone
+            </th>
+            <th>
+                CPF
+            </th>
+            <th>
+                Sexo
+            </th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sexo)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new {  id=item.IdPessoa  }) |
+                @Html.ActionLink("Consultar", "Details", new { id=item.IdPessoa }) |
+                @Html.ActionLink("Deletar", "Delete", new { id=item.IdPessoa })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
