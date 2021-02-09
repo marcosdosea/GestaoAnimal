@@ -26,6 +26,8 @@ namespace Models
         [DataType(DataType.Time, ErrorMessage = "Horário válido requerido.")]
         public TimeSpan Horario { get; set; }
 
+        [Display(Name = "Dono")]
+        [Required(ErrorMessage = "´Você precisa selecionar um dono.")]
         public int IdPessoa { get; set; }
 
         [Display(Name = "Animal")]
