@@ -7,6 +7,7 @@ using Core;
 using GestaoAnimalWeb.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GestaoAnimalWeb.Controllers
 {
@@ -14,25 +15,29 @@ namespace GestaoAnimalWeb.Controllers
        
     {
         IConsultaService _consultaService;
+        IAnimalService _animalService;
         IMapper _mapper;
         // GET: ConsultaController
 
-        public ConsultaController(IConsultaService consultaService, IMapper mapper)
+        public ConsultaController(IConsultaService consultaService, IMapper mapper, IAnimalService animalService)
         {
             _consultaService = consultaService;
             _mapper = mapper;
+            _animalService = animalService;
         }
         public ActionResult Index()
         {
-            var listaConsultas = _consultaService.ObterTodos();
-            var listaConsultasModel = _mapper.Map<List<ConsultaModel>>(listaConsultas);
-            return View(listaConsultasModel);
+            var listaConsultas = _consultaService.ObterTodasConsultas();
+
+            return View(listaConsultas);
         }
 
         // GET: ConsultaController/Details/5
         public ActionResult Details(int id)
         {
             Consulta consulta = _consultaService.Obter(id);
+            Animal animal = _animalService.Obter(consulta.IdAnimal);
+            ViewBag.Animal = animal.Nome;
             ConsultaModel consultaModel = _mapper.Map<ConsultaModel>(consulta);
             return View(consultaModel);
         }
@@ -40,6 +45,8 @@ namespace GestaoAnimalWeb.Controllers
         // GET: ConsultaController/Create
         public ActionResult Create()
         {
+            IEnumerable<Animal> listaAnimais = _animalService.ObterTodos();
+            ViewBag.Animal = new SelectList(listaAnimais, "IdAnimal", "Nome", null);
             return View();
         }
 
@@ -61,7 +68,12 @@ namespace GestaoAnimalWeb.Controllers
         {
             Consulta consulta = _consultaService.Obter(id);
             ConsultaModel consultaModel = _mapper.Map<ConsultaModel>(consulta);
+
+            IEnumerable<Animal> listaAnimais = _animalService.ObterTodos();
+            IEnumerable<ConsultaDTO> listaConsultas = _consultaService.ObterTodasConsultas();
+            ViewBag.Animal = new SelectList(listaAnimais, "IdAnimal", "Nome", null);
             return View(consultaModel);
+          
         }
 
         // POST: ConsultaController/Edit/5
@@ -82,6 +94,8 @@ namespace GestaoAnimalWeb.Controllers
         {
             Consulta consulta = _consultaService.Obter(id);
             ConsultaModel consultaModel = _mapper.Map<ConsultaModel>(consulta);
+            Animal animal = _animalService.Obter(consulta.IdAnimal);
+            ViewBag.Animal = animal.Nome;
             return View(consultaModel);
         }
 

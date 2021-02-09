@@ -1,69 +1,67 @@
-﻿@model IEnumerable<GestaoAnimalWeb.Models.ConsultaModel>
-
+﻿@model IEnumerable<Core.ConsultaDTO>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Consultas";
 }
 
-<h1>Index</h1>
+<h1>Consultas</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Nova Consulta</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.IdConsulta)
+               Descrição
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Descricao)
+               Data
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Horario)
+                Horário
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Data)
+               Preço
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Preco)
+               Animal
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdAnimal)
+                Dono
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdPessoa)
+                Ações
             </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IdConsulta)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Horario)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Data)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Preco)
+                @Html.DisplayFor(modelItem => item.Horario)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdAnimal)
+                @{ 
+                    var precoFormatado = item.Preco.ToString().Concat(" R$");
+                }
+                @Html.DisplayFor(modelItem => precoFormatado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Animal)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IdPessoa)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.IdConsulta }) |
-                @Html.ActionLink("Details", "Details", new { id = item.IdConsulta }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.IdConsulta })
+                @Html.ActionLink("Editar", "Edit", new { id=item.IdConsulta }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.IdConsulta }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.IdConsulta })
             </td>
         </tr>
 }
