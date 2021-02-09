@@ -108,6 +108,42 @@ body {
     margin-left: 0;
 }
 
+/* Common Styles */
+.section-title {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    color: #00d7df;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.new-item-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed #d9d9d9;
+    padding: 20px;
+    border-radius: 4px;
+    color: #757575;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: all 0.2s;
+    max-height: 60px;
+}
+
+.new-item-button:hover{
+    color: #757575;
+    text-decoration: none;
+    font-size: 105%;
+    background-color: #f1f1f1;
+}
+
+.new-item-button i{
+    margin-right: 5px;
+    font-size: 20px;
+}
+
 @media (min-width: 768px) {
     #sidebar-wrapper {
         margin-left: 0;
