@@ -163,6 +163,11 @@ namespace Core
                     .HasColumnName("peso")
                     .HasColumnType("decimal(10,2)");
 
+                entity.Property(e => e.Raca)
+                    .HasColumnName("raca")
+                    .HasMaxLength(45)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Sexo)
                     .HasColumnName("sexo")
                     .HasMaxLength(1)
