@@ -20,13 +20,13 @@ namespace GestaoAnimalWeb.Controllers
         public AplicaMedicamentoController(IAplicaMedicamentoService aplicaMedicamentoService, 
             IMedicamentoService medicamentoService,
             IAnimalService animalService,
-            //IPessoaService pessoaService, 
+            IPessoaService pessoaService, 
             IMapper mapper)
         {
             _aplicaMedicamentoService = aplicaMedicamentoService;
             _medicamentoService = medicamentoService;
             _animalService = animalService;
-            //_pessoaService = pessoaService;
+            _pessoaService = pessoaService;
             _mapper = mapper;
         }
 
@@ -43,11 +43,10 @@ namespace GestaoAnimalWeb.Controllers
             Aplicamedicamento aplicaMedicamento = _aplicaMedicamentoService.Obter(id);
             Medicamento medicamento = _medicamentoService.Obter(aplicaMedicamento.IdMedicamento);
             Animal animal = _animalService.Obter(aplicaMedicamento.IdAnimal);
+            Pessoa pessoa = _pessoaService.Obter(aplicaMedicamento.IdPessoa);
             ViewBag.Medicamento = medicamento.Nome;
             ViewBag.Animal = animal.Nome;
-            //Pessoa service não está implementada então não será póssível obter o nome diretamente
-            //Pessoa pessoa = _pessoaService.Obter(aplicaMedicamento.IdPessoa);
-            //ViewBag.Pessoa = pessoa.Nome;
+            ViewBag.Pessoa = pessoa.Nome;
             AplicaMedicamentoModel aplicaMedicamentoModel = _mapper.Map<AplicaMedicamentoModel>(aplicaMedicamento);
             return View(aplicaMedicamentoModel);
         }
@@ -57,8 +56,10 @@ namespace GestaoAnimalWeb.Controllers
         {
             IEnumerable<Animal> listaAnimais = _animalService.ObterTodos();
             IEnumerable<MedicamentoDTO> listaMedicamentos = _medicamentoService.ObterTodos();
+            IEnumerable<Pessoa> listaPessoas = _pessoaService.ObterTodos();
             ViewBag.Animais = new SelectList(listaAnimais, "IdAnimal", "Nome", null);
             ViewBag.Medicamentos = new SelectList(listaMedicamentos, "IdMedicamento", "Nome", null);
+            ViewBag.Pessoas = new SelectList(listaPessoas, "IdPessoa", "Nome", null);
             return View();
         }
 
@@ -67,15 +68,12 @@ namespace GestaoAnimalWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(AplicaMedicamentoModel aplicaMedicamentoModel)
         {
-            Console.WriteLine(ModelState.IsValid);
             if (ModelState.IsValid)
             {
                 if (aplicaMedicamentoModel.DataAplicacao > DateTime.Now)
                 {
                     Console.WriteLine("Erro: A data de aplicação não pode ser maior que a data de hoje.");
                 }
-                //Inserindo estaticamente para testes
-                aplicaMedicamentoModel.IdPessoa = 2;
                 var aplicaMedicamento = _mapper.Map<Aplicamedicamento>(aplicaMedicamentoModel);
                 _aplicaMedicamentoService.Inserir(aplicaMedicamento);
             }
@@ -87,10 +85,12 @@ namespace GestaoAnimalWeb.Controllers
         {
             IEnumerable<Animal> listaAnimais = _animalService.ObterTodos();
             IEnumerable<MedicamentoDTO> listaMedicamentos = _medicamentoService.ObterTodos();
+            IEnumerable<Pessoa> listaPessoas = _pessoaService.ObterTodos();
             Aplicamedicamento aplicaMedicamento = _aplicaMedicamentoService.Obter(id);
             AplicaMedicamentoModel aplicaMedicamentoModel = _mapper.Map<AplicaMedicamentoModel>(aplicaMedicamento);
             ViewBag.Animais = new SelectList(listaAnimais, "IdAnimal", "Nome", null);
             ViewBag.Medicamentos = new SelectList(listaMedicamentos, "IdMedicamento", "Nome", null);
+            ViewBag.Pessoas = new SelectList(listaPessoas, "IdPessoa", "Nome", null);
             return View(aplicaMedicamentoModel);
         }
 
@@ -114,11 +114,10 @@ namespace GestaoAnimalWeb.Controllers
             Aplicamedicamento aplicaMedicamento = _aplicaMedicamentoService.Obter(id);
             Medicamento medicamento = _medicamentoService.Obter(aplicaMedicamento.IdMedicamento);
             Animal animal = _animalService.Obter(aplicaMedicamento.IdAnimal);
+            Pessoa pessoa = _pessoaService.Obter(aplicaMedicamento.IdPessoa);
             ViewBag.Medicamento = medicamento.Nome;
             ViewBag.Animal = animal.Nome;
-            //Pessoa service não está implementada então não será póssível obter o nome diretamente
-            //Pessoa pessoa = _pessoaService.Obter(aplicaMedicamento.IdPessoa);
-            //ViewBag.Pessoa = pessoa.Nome;
+            ViewBag.Pessoa = pessoa.Nome;
             AplicaMedicamentoModel aplicaMedicamentoModel = _mapper.Map<AplicaMedicamentoModel>(aplicaMedicamento);
             return View(aplicaMedicamentoModel);
         }

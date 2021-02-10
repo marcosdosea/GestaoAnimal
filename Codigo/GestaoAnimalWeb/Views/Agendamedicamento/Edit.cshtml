@@ -1,13 +1,12 @@
 ﻿@model Models.AgendamedicamentoModel
 
 @{
-    ViewData["Title"] = "Editar Agendamento";
+    ViewData["Title"] = "Alterar Agendamento";
 }
 
-<h1>Editar</h1>
-
-<h4>Agendamento de Medicamento</h4>
+<h1 class="section-title">Alterar Agendamento</h1>
 <hr />
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -35,8 +34,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="IdPessoa" class="control-label"></label>
-                <input asp-for="IdPessoa" class="form-control" />
-                <!--<select asp-for="IdPessoa" asp-items="ViewBag.Pessoas" class="form-control"></select>-->
+                <select asp-for="IdPessoa" asp-items="ViewBag.Pessoas" class="form-control"></select>
                 <span asp-validation-for="IdPessoa" class="text-danger"></span>
             </div>
             <div class="form-group">

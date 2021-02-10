@@ -4,17 +4,15 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Agendamentos</h1>
+<h1 class="section-title">Agendamentos</h1>
+<hr />
 
-<p>
-    <a asp-action="Create">Criar Novo Agendamento</a>
-</p>
+<a asp-action="Create" class="new-item-button">
+    <i class="fas fa-plus-circle"></i> Novo Agendamento
+</a>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                Código
-            </th>
             <th>
                 Frequência
             </th>
@@ -46,44 +44,42 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdAgendamento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Frequencia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataInicio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataTermino)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Intervalo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomePessoa)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeAnimal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeMedicamento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeConsulta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dosagem)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Edit", new { id=item.IdAgendamento }) |
-                @Html.ActionLink("Detalhes", "Details", new { id = item.IdAgendamento }) |
-                @Html.ActionLink("Deletar", "Delete", new { id = item.IdAgendamento })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Frequencia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataInicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataTermino)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Intervalo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomePessoa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeAnimal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeMedicamento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeConsulta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dosagem)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.IdAgendamento }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.IdAgendamento }) |
+                    @Html.ActionLink("Deletar", "Delete", new { id = item.IdAgendamento })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
