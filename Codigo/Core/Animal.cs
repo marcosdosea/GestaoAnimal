@@ -26,6 +26,7 @@ namespace Core
         public int IdOrganizacao { get; set; }
         public int IdEspecieAnimal { get; set; }
         public int IdLote { get; set; }
+        public string Raca { get; set; }
 
         public virtual Especieanimal IdEspecieAnimalNavigation { get; set; }
         public virtual Lote IdLoteNavigation { get; set; }

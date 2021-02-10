@@ -9,7 +9,7 @@ namespace Core
         public string Raca { get; set; }
         public DateTime? DataNascimento { get; set; }
         public string Sexo { get; set; }
-        public float? Peso { get; set; }
+        public decimal? Peso { get; set; }
         public byte[] Foto { get; set; }
         public string Status { get; set; }
         public byte? Castrado { get; set; }
