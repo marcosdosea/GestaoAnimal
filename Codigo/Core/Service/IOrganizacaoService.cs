@@ -10,7 +10,7 @@ namespace Core
         int Inserir(Organizacao organizacao);
         Organizacao Obter(int idOrganizacao);
         IEnumerable<OrganizacaoDTO> ObterTodosPorNome(string nome);
-        IEnumerable<Organizacao> ObterTodos();
+        IEnumerable<OrganizacaoDTO> ObterTodos();
         void Remover(int idOrganizacao);
         IEnumerable<OrganizacaoDTO> ObterPorNomeOrdenadoDescending(string nome);
     }

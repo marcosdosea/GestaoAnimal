@@ -6,6 +6,7 @@ namespace Core
 {
     public class OrganizacaoDTO
     {
+        public int IdOrganizacao { get; set; }
         public string Cnpj { get; set; }
         public DateTime? DataAbertura { get; set; }
         public byte? Ativo { get; set; }

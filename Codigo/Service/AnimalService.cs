@@ -77,8 +77,10 @@ namespace Service
 							Raca = animal.Raca,
 							Sexo = animal.Sexo,
 							EspecieAnimal = animal.IdEspecieAnimalNavigation.Nome,
-							NomeOrganizacao = animal.IdOrganizacaoNavigation.Nome,
-							NomePessoa = animal.IdPessoaNavigation.Nome
+							Organizacao = animal.IdOrganizacaoNavigation.Nome,
+							Pessoa = animal.IdPessoaNavigation.Nome,
+							Peso = animal.Peso,
+							DataNascimento = animal.DataNascimento
 						};
 			return query;
 		}

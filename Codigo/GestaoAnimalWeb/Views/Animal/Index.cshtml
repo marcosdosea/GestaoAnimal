@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.IdAnimal)
+               Código
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nome)
@@ -22,10 +22,10 @@
                 Especie
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Raca)
+                Raça
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DataNascimento)
+               Data de Nascimento
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Sexo)
@@ -34,7 +34,7 @@
                 @Html.DisplayNameFor(model => model.Peso)
             </th>
             <th>
-                Pessoa
+                Dono
             </th>
             <th>
                Organização
@@ -69,9 +69,10 @@
            
             <td>
                 <!--AQUI SERÁ DADOS DA PESSOA-->
+                @Html.DisplayFor(modelItem => item.Pessoa)
             </td>
             <td>
-               <!--AQUI SERÁ DADOS DA ORGANIZAÇÃO-->
+                @Html.DisplayFor(modelItem => item.Organizacao)
             </td>
             <td>
                 @Html.ActionLink("Editar", "Edit", new {id=item.IdAnimal }) |
