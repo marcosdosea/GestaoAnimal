@@ -78,7 +78,9 @@ namespace Service
 							Sexo = animal.Sexo,
 							EspecieAnimal = animal.IdEspecieAnimalNavigation.Nome,
 							NomeOrganizacao = animal.IdOrganizacaoNavigation.Nome,
-							NomePessoa = animal.IdPessoaNavigation.Nome
+							Pessoa = animal.IdPessoaNavigation.Nome,
+							Peso = animal.Peso,
+							DataNascimento = animal.DataNascimento
 						};
 			return query;
 		}

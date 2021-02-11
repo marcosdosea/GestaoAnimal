@@ -16,14 +16,16 @@ namespace GestaoAnimalWeb.Controllers
         IAnimalService _animalService;
         IMapper _mapper;
         IEspecieAnimalService _especieAnimalService;
+        IPessoaService _pessoaService;
         //IOrganizacaoService _organizacaoService;
 
 
-        public AnimalController(IAnimalService animalService, IEspecieAnimalService especieAnimalService,  IMapper mapper)
+        public AnimalController(IAnimalService animalService, IEspecieAnimalService especieAnimalService,  IMapper mapper, IPessoaService pessoaService)
         {
             _animalService = animalService;
             _especieAnimalService = especieAnimalService;
-           // _organizacaoService = organizacaoService;
+            _pessoaService = pessoaService;
+            // _organizacaoService = organizacaoService;
             _mapper = mapper;
         }
         // GET: AnimalController
@@ -38,9 +40,10 @@ namespace GestaoAnimalWeb.Controllers
         public ActionResult Details(int id)
         {
             Animal animal = _animalService.Obter(id);
-           // Pessoa dono = _pessoaService.Obter(dono.Nome.);
             Especieanimal especie = _especieAnimalService.Obter(animal.IdEspecieAnimal);
-           // Organizacao organizacao = _organizacaoService.Obter(animal.IdOrganizacao);
+            Pessoa pessoa = _pessoaService.Obter(animal.IdPessoa);
+            ViewBag.Pessoa = pessoa.Nome;
+            // Organizacao organizacao = _organizacaoService.Obter(animal.IdOrganizacao);
             ViewBag.EspecieAnimal = especie.Nome;
             //ViewBag.Organizacao = organizacao.Nome;
             AnimalModel animalModel = _mapper.Map<AnimalModel>(animal);
@@ -52,6 +55,15 @@ namespace GestaoAnimalWeb.Controllers
         {
             IEnumerable<Especieanimal> listaEspecies = _especieAnimalService.ObterTodos();
             ViewBag.EspecieAnimal = new SelectList(listaEspecies, "IdEspecieAnimal", "Nome", null);
+            IEnumerable<Pessoa> listaPessoas = _pessoaService.ObterTodos();
+            ViewBag.Pessoa = new SelectList(listaPessoas, "IdPessoa", "Nome", null);
+            var generos = new[]
+           {
+                new SelectListItem { Value = "M", Text = "Masculino" },
+                new SelectListItem { Value = "F", Text = "Feminino" },
+
+            };
+            ViewBag.Generos = new SelectList(generos, "Value", "Text");
             return View();
         }
 
@@ -75,6 +87,8 @@ namespace GestaoAnimalWeb.Controllers
             AnimalModel animalModel = _mapper.Map<AnimalModel>(animal);
             IEnumerable<Especieanimal> listaEspecies = _especieAnimalService.ObterTodos();
             ViewBag.EspecieAnimal = new SelectList(listaEspecies, "IdEspecieAnimal", "Nome", null);
+            IEnumerable<Pessoa> listaPessoas = _pessoaService.ObterTodos();
+            ViewBag.Pessoa = new SelectList(listaPessoas, "IdPessoa", "Nome", null);
             return View(animalModel);
         }
 
@@ -97,6 +111,8 @@ namespace GestaoAnimalWeb.Controllers
             Animal animal = _animalService.Obter(id);
             AnimalModel animalModel = _mapper.Map<AnimalModel>(animal);
             Especieanimal especie = _especieAnimalService.Obter(animal.IdEspecieAnimal);
+            Pessoa pessoa = _pessoaService.Obter(animal.IdPessoa);
+            ViewBag.Pessoa = pessoa.Nome;
             ViewBag.EspecieAnimal = especie.Nome;
             return View(animalModel);
         }

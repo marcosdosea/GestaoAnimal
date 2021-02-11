@@ -11,8 +11,8 @@
     
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdAnimal)
+        <dt class="col-sm-2">
+            Código
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.IdAnimal)
@@ -80,8 +80,8 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.IdPessoa)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdPessoa)
+        <dd class="col-sm-10">
+            @ViewBag.Pessoa
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.IdOrganizacao)
@@ -92,7 +92,7 @@
     </dl>
     
     <form asp-action="Delete">
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Voltar para a Lista</a>
+        <input type="submit" value="Deletar" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar à Lista</a>
     </form>
 </div>

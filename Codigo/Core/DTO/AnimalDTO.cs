@@ -17,6 +17,7 @@ namespace Core
         public string NomePessoa { get; set; }
         public string NomeOrganizacao { get; set; }
         public string EspecieAnimal { get; set; }
+        public string Pessoa { get; set; }
         //public int IdLote { get; set; }
     }
 }
