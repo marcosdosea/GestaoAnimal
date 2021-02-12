@@ -24,7 +24,7 @@ namespace GestaoAnimalWeb.Models
         [Required(ErrorMessage = "Sexo não pode estar vazio.")]
         public string Sexo { get; set; }
         [Required(ErrorMessage = "Peso não pode estar vazio.")]
-        public float? Peso { get; set; }
+        public decimal? Peso { get; set; }
         public byte[] Foto { get; set; }
         public string Status { get; set; }
         [Range(0, 1,

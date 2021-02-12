@@ -15,6 +15,7 @@ namespace Core
         public int IdMedicamento { get; set; }
         public int IdConsulta { get; set; }
         public string Dosagem { get; set; }
+        public byte? Aplicado { get; set; }
 
         public virtual Animal IdAnimalNavigation { get; set; }
         public virtual Consulta IdConsultaNavigation { get; set; }
