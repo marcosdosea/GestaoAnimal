@@ -4,8 +4,9 @@
     ViewData["Title"] = "Editar Pessoa";
 }
 
-<h1>Editar Pessoa</h1>
+<h1 class="section-title">Editar Pessoa</h1>
 <hr />
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -58,7 +59,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="TipoPessoa" class="control-label"></label>
-                <input asp-for="TipoPessoa" class="form-control" />
+                <select asp-for="TipoPessoa" asp-items="ViewBag.Tipo" class="form-control"></select>
                 <span asp-validation-for="TipoPessoa" class="text-danger"></span>
             </div>
             <div class="form-group">

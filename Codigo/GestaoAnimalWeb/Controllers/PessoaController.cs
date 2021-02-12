@@ -1,14 +1,10 @@
 ﻿using AutoMapper;
 using Core;
-using GestaoAnimalWeb.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace Controllers
 {
@@ -47,9 +43,18 @@ namespace Controllers
             {
                 new SelectListItem { Value = "M", Text = "Masculino" },
                 new SelectListItem { Value = "F", Text = "Feminino" },
-                new SelectListItem { Value = "O", Text = "Outro" },
+                new SelectListItem { Value = "I", Text = "Gênero não Binário" },
             };  
             ViewBag.Generos = new SelectList(generos, "Value", "Text");
+            var tipoPessoas = new[]
+            {
+                new SelectListItem { Value = "A", Text = "Administrador" },
+                new SelectListItem { Value = "O", Text = "Organização" },
+                new SelectListItem { Value = "V", Text = "Veterinário" },
+                new SelectListItem { Value = "R", Text = "Dono" },
+            };
+            ViewBag.Tipo = new SelectList(tipoPessoas, "Value", "Text");
+
             return View();
         }
 
@@ -75,9 +80,17 @@ namespace Controllers
             {
                 new SelectListItem { Value = "M", Text = "Masculino" },
                 new SelectListItem { Value = "F", Text = "Feminino" },
-                new SelectListItem { Value = "O", Text = "Outro" },
+                new SelectListItem { Value = "I", Text = "Gênero não Binário" },
             };
             ViewBag.Generos = new SelectList(generos, "Value", "Text");
+            var tipoPessoas = new[]
+            {
+                new SelectListItem { Value = "A", Text = "Administrador" },
+                new SelectListItem { Value = "O", Text = "Organização" },
+                new SelectListItem { Value = "V", Text = "Veterinário" },
+                new SelectListItem { Value = "R", Text = "Dono" },
+            };
+            ViewBag.Tipo = new SelectList(tipoPessoas, "Value", "Text");
             return View(pessoaModel);
         }
 
