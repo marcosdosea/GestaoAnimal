@@ -4,7 +4,8 @@
     ViewData["Title"] = "Consultar Aplicação";
 }
 
-<h1>Detalhes</h1>
+<h1 class="section-title">Consultar Aplicação</h1>
+<hr />
 
 <div>
     <h4>Aplicação de Medicamento</h4>
@@ -35,7 +36,7 @@
             @Html.DisplayFor(model => model.DataAplicacao)
         </dd>
         <dt class="col-sm-2">
-            Pessoa
+            @Html.DisplayNameFor(model => model.IdPessoa)
         </dt>
         <dd class="col-sm-10">
             @ViewBag.Pessoa
