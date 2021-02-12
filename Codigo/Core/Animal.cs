@@ -15,10 +15,9 @@ namespace Core
 
         public int IdAnimal { get; set; }
         public string Nome { get; set; }
-        public string Raca { get; set; }
         public DateTime? DataNascimento { get; set; }
         public string Sexo { get; set; }
-        public float? Peso { get; set; }
+        public decimal? Peso { get; set; }
         public byte[] Foto { get; set; }
         public string Status { get; set; }
         public byte? Castrado { get; set; }
@@ -27,6 +26,7 @@ namespace Core
         public int IdOrganizacao { get; set; }
         public int IdEspecieAnimal { get; set; }
         public int IdLote { get; set; }
+        public string Raca { get; set; }
 
         public virtual Especieanimal IdEspecieAnimalNavigation { get; set; }
         public virtual Lote IdLoteNavigation { get; set; }

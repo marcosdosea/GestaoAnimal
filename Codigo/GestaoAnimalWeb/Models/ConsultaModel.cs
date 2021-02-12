@@ -13,12 +13,11 @@ namespace GestaoAnimalWeb.Models
         [Required(ErrorMessage = "Descrição não pode estar vazio.")]
         public string Descricao { get; set; }
         [Required(ErrorMessage = "Horário não pode estar vazio.")]
-        public TimeSpan Horario { get; set; }
         public DateTime Data { get; set; }
 
         [Range(0, 5000,
         ErrorMessage = "O valor da consulta deve variar de $0 (grátis) até $5.000,00")]
-        public double Preco { get; set; }
+        public decimal Preco { get; set; }
 
         [Display(Name = "Animal")]
         [Required(ErrorMessage = "Selecione um animal.")]

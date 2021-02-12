@@ -55,7 +55,6 @@ namespace Service
                         {
                             IdConsulta = consulta.IdConsulta,
                             Descricao = consulta.Descricao,
-                            Horario = consulta.Horario,
                             Data = consulta.Data,
                             Preco = consulta.Preco,
                             IdAnimal = consulta.IdAnimalNavigation.IdAnimal,
