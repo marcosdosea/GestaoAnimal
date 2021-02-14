@@ -59,6 +59,9 @@ namespace GestaoAnimalWeb.Controllers
 
             IEnumerable<OrganizacaoDTO> listaOrganizacoes = _organizacaoService.ObterTodos();
             ViewBag.Organizacao = new SelectList(listaOrganizacoes, "IdOrganizacao", "Nome", null);
+
+            IEnumerable<Pessoa> listaPessoas = _pessoaService.ObterTodos();
+            ViewBag.Pessoa = new SelectList(listaPessoas, "IdPessoa", "Nome", null);
             var generos = new[]
             {
                 new SelectListItem { Value = "M", Text = "Masculino" },
@@ -94,6 +97,7 @@ namespace GestaoAnimalWeb.Controllers
             ViewBag.Pessoa = new SelectList(listaPessoas, "IdPessoa", "Nome", null);
             IEnumerable<OrganizacaoDTO> listaOrganizacoes = _organizacaoService.ObterTodos();
             ViewBag.Organizacao = new SelectList(listaOrganizacoes, "IdOrganizacao", "Nome", null);
+            
             return View(animalModel);
         }
 
