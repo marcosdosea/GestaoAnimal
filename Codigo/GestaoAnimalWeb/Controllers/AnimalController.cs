@@ -66,6 +66,8 @@ namespace GestaoAnimalWeb.Controllers
 
             };
             ViewBag.Generos = new SelectList(generos, "Value", "Text");
+            IEnumerable<Pessoa> listaPessoas = _pessoaService.ObterTodos();
+            ViewBag.Pessoa = new SelectList(listaPessoas, "IdPessoa", "Nome", null);
 
             return View();
         }
