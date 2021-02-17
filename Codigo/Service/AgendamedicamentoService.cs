@@ -53,6 +53,7 @@ namespace Service
                             Dosagem = agendamedicamento.Dosagem,
                             NomePessoa = agendamedicamento.IdPessoaNavigation.Nome,
                             NomeAnimal = agendamedicamento.IdAnimalNavigation.Nome,
+                            NomeConsulta = agendamedicamento.IdConsultaNavigation.Descricao,
                             NomeMedicamento = agendamedicamento.IdMedicamentoNavigation.Nome
                         };
             return query;
