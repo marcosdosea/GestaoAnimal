@@ -80,6 +80,7 @@ namespace Service
 							Organizacao = animal.IdOrganizacaoNavigation.Nome,
 							Pessoa = animal.IdPessoaNavigation.Nome,
 							Peso = animal.Peso,
+							IdLote = animal.IdLote,
 							DataNascimento = animal.DataNascimento
 						};
 			return query;

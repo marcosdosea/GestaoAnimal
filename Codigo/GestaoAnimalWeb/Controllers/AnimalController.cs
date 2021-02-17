@@ -8,6 +8,7 @@ using GestaoAnimalWeb.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Models;
 
 namespace GestaoAnimalWeb.Controllers
 {

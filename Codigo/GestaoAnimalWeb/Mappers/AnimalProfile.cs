@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Core;
-using GestaoAnimalWeb.Models;
+using Models;
 
 namespace GestaoAnimalWeb.Mappers
 {
