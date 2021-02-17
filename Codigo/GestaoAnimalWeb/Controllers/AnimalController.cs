@@ -69,8 +69,7 @@ namespace GestaoAnimalWeb.Controllers
 
             };
             ViewBag.Generos = new SelectList(generos, "Value", "Text");
-            IEnumerable<Pessoa> listaPessoas = _pessoaService.ObterTodos();
-            ViewBag.Pessoa = new SelectList(listaPessoas, "IdPessoa", "Nome", null);
+            
 
             return View();
         }
@@ -128,7 +127,7 @@ namespace GestaoAnimalWeb.Controllers
             Pessoa pessoa = _pessoaService.Obter(animal.IdPessoa);
             ViewBag.Pessoa = pessoa.Nome;
 
-            Organizacao organizacao = _organizacaoService.Obter(animal.IdPessoa);
+            Organizacao organizacao = _organizacaoService.Obter(animal.IdOrganizacao);
             ViewBag.Organizacao = organizacao.Nome;
             return View(animalModel);
         }
