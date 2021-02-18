@@ -4,11 +4,10 @@
     ViewData["Title"] = "Consultar";
 }
 
-<h1>Consultar Medicamento</h1>
+<h1 class="section-title">Consultar Medicamento</h1>
+<hr />
 
 <div>
-    <h4>Medicamento</h4>
-    <hr />
     <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Nome)
@@ -25,6 +24,6 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Editar", "Edit", new {  id = Model.IdMedicamento  }) |
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IdMedicamento }) |
     <a asp-action="Index">Voltar a lista</a>
 </div>
