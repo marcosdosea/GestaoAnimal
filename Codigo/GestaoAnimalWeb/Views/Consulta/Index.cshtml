@@ -33,33 +33,32 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Descricao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Data)
-                </td>
-                <td>
-                    @{
-                        var precoFormatado = item.Preco.ToString().Concat(" R$");
-                    }
-                    @Html.DisplayFor(modelItem => precoFormatado)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Animal)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IdPessoa)
-                </td>
-                <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.IdConsulta }) |
-                    @Html.ActionLink("Detalhes", "Details", new { id = item.IdConsulta }) |
-                    @Html.ActionLink("Deletar", "Delete", new { id = item.IdConsulta })
-                </td>
-            </tr>
-        }
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                @{ 
+                    var precoFormatado = item.Preco.ToString().Concat(" R$");
+                }
+                @Html.DisplayFor(modelItem => precoFormatado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Animal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pessoa)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id=item.IdConsulta }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.IdConsulta }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.IdConsulta })
+            </td>
+        </tr>
+}
     </tbody>
 </table>

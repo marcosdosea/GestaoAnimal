@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 using Core;
 
-namespace GestaoAnimalWeb.Models
+namespace Models
 {
     public class AnimalModel
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdAnimal { get; set; }
         public string Nome { get; set; }
         [Display(Name = "Espécie")]
@@ -17,7 +20,7 @@ namespace GestaoAnimalWeb.Models
         public string Raca { get; set; }
 
         [Display(Name = "Data de Nascimento")]
-        [DataType(DataType.DateTime, ErrorMessage = "Data válida requerida.")]
+        [DataType(DataType.Date, ErrorMessage = "Data válida requerida.")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? DataNascimento { get; set; }
 
@@ -39,7 +42,6 @@ namespace GestaoAnimalWeb.Models
         [Display(Name = "Organização")]
         [Required(ErrorMessage = "Selecione uma organização para o animal.")]
         public int IdOrganizacao { get; set; }
-      
-       
+        public int IdLote { get; set; }
     }
 }

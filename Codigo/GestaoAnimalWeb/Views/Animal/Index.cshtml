@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.IdAnimal)
+               Código
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nome)
@@ -22,10 +22,10 @@
                 Especie
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Raca)
+                Raça
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DataNascimento)
+               Data de Nascimento
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Sexo)
@@ -34,7 +34,7 @@
                 @Html.DisplayNameFor(model => model.Peso)
             </th>
             <th>
-                Pessoa
+                Dono
             </th>
             <th>
                 Organização
@@ -43,43 +43,42 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IdAnimal)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EspecieAnimal)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Raca)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataNascimento)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Sexo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Peso)
-                </td>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EspecieAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Raca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Peso)
+            </td>
 
-                <td>
-                    <!--AQUI SERÁ DADOS DA PESSOA-->
-                </td>
-                <td>
-                    <!--AQUI SERÁ DADOS DA ORGANIZAÇÃO-->
-                </td>
-                <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.IdAnimal }) |
-                    @Html.ActionLink("Consultar", "Details", new { id = item.IdAnimal }) |
-                    @Html.ActionLink("Deletar", "Delete", new { id = item.IdAnimal })
-                </td>
-            </tr>
-        }
+            <td>
+                @Html.DisplayFor(modelItem => item.Pessoa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Organizacao)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.IdAnimal }) |
+                @Html.ActionLink("Consultar", "Details", new { id = item.IdAnimal }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.IdAnimal })
+            </td>
+        </tr>
+}
     </tbody>
 </table>

@@ -59,7 +59,8 @@ namespace Service
                             Preco = consulta.Preco,
                             IdAnimal = consulta.IdAnimalNavigation.IdAnimal,
                             IdPessoa = consulta.IdPessoaNavigation.IdPessoa,
-                            Animal = consulta.IdAnimalNavigation.Nome
+                            Animal = consulta.IdAnimalNavigation.Nome,
+                            Pessoa = consulta.IdPessoaNavigation.Nome
                         };
             return query;
         }

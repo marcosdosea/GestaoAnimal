@@ -4,15 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Core;
-using Models;
+using GestaoAnimalWeb.Models;
 
 namespace GestaoAnimalWeb.Mappers
 {
-    public class AnimalProfile: Profile
+    public class OrganizacaoProfile: Profile
     {
-        public AnimalProfile()
+        public OrganizacaoProfile()
         {
-            CreateMap<AnimalModel, Animal>().ReverseMap();
+            CreateMap<OrganizacaoModel, Organizacao>().ReverseMap();
         }
     }
 }
