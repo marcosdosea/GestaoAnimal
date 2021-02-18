@@ -33,7 +33,7 @@ namespace Core
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySQL("server=localhost;port=3306;user=root;password=123456;database= gestaoanimal");
+                optionsBuilder.UseMySQL("server=localhost;port=3306;user=root;password=123456;database=gestaoanimal");
             }
         }
 
@@ -59,6 +59,8 @@ namespace Core
                     .HasName("fk_TB_AGENDA_MEDICAMENTO_TB_PESSOA1_idx");
 
                 entity.Property(e => e.IdAgendamento).HasColumnName("idAgendamento");
+
+                entity.Property(e => e.Aplicado).HasColumnName("aplicado");
 
                 entity.Property(e => e.DataInicio)
                     .HasColumnName("dataInicio")
@@ -157,7 +159,9 @@ namespace Core
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Peso).HasColumnName("peso");
+                entity.Property(e => e.Peso)
+                    .HasColumnName("peso")
+                    .HasColumnType("decimal(10,2)");
 
                 entity.Property(e => e.Raca)
                     .HasColumnName("raca")
@@ -227,8 +231,6 @@ namespace Core
                     .HasMaxLength(45)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Horario).HasColumnName("horario");
-
                 entity.Property(e => e.IdAnimal).HasColumnName("idAnimal");
 
                 entity.Property(e => e.IdMedicamento).HasColumnName("idMedicamento");
@@ -281,13 +283,13 @@ namespace Core
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Horario).HasColumnName("horario");
-
                 entity.Property(e => e.IdAnimal).HasColumnName("idAnimal");
 
                 entity.Property(e => e.IdPessoa).HasColumnName("idPessoa");
 
-                entity.Property(e => e.Preco).HasColumnName("preco");
+                entity.Property(e => e.Preco)
+                    .HasColumnName("preco")
+                    .HasColumnType("decimal(10,2)");
 
                 entity.HasOne(d => d.IdAnimalNavigation)
                     .WithMany(p => p.Consulta)

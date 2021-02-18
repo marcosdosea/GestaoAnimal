@@ -48,7 +48,6 @@ namespace Service
                             IdAplicaMedicamento = aplicamedicamento.IdAplicaMedicamento,
                             Dosagem = aplicamedicamento.Dosagem,
                             DataAplicacao = aplicamedicamento.DataAplicacao,
-                            Horario = aplicamedicamento.Horario,
                             NomeAnimal = aplicamedicamento.IdAnimalNavigation.Nome,
                             NomeMedicamento = aplicamedicamento.IdMedicamentoNavigation.Nome,
                             NomePessoa = aplicamedicamento.IdPessoaNavigation.Nome

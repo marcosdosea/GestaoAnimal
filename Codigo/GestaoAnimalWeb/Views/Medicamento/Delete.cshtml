@@ -4,11 +4,11 @@
     ViewData["Title"] = "Remover Medicamento";
 }
 
-<h1>Remover Medicamento</h1>
+<h1 class="section-title">Remover Medicamento</h1>
+<hr />
 
 <h3>Tem certeza que deseja remover este medicamento?</h3>
 <div>
-    <hr />
     <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Nome)
@@ -23,7 +23,7 @@
             @ViewBag.nomeEspecie
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="submit" value="Remover" class="btn btn-danger" /> |
         <a asp-action="Index">Voltar a lista</a>

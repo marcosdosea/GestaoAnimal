@@ -65,11 +65,19 @@ namespace GestaoAnimalWeb.Controllers
             ViewBag.Pessoa = new SelectList(listaPessoas, "IdPessoa", "Nome", null);
             var generos = new[]
             {
-                new SelectListItem { Value = "M", Text = "Masculino" },
-                new SelectListItem { Value = "F", Text = "Feminino" },
+                new SelectListItem { Value = "M", Text = "Macho" },
+                new SelectListItem { Value = "F", Text = "Fêmea" },
+
+            };
+
+            var escolhaBinaria = new[]
+            {
+                new SelectListItem { Value = "0", Text = "Não" },
+                new SelectListItem { Value = "1", Text = "Sim" },
 
             };
             ViewBag.Generos = new SelectList(generos, "Value", "Text");
+            ViewBag.EscolhaBinaria = new SelectList(escolhaBinaria, "Value", "Text");
             
 
             return View();

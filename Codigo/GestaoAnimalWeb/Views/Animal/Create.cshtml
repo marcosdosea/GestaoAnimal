@@ -4,10 +4,9 @@
     ViewData["Title"] = "Novo Animal";
 }
 
-<h1>Novo Animal</h1>
-
-
+<h1 class="section-title">Novo Animal</h1>
 <hr />
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -54,12 +53,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Castrado" class="control-label"></label>
-                <input asp-for="Castrado" class="form-control" />
+                <select asp-for="Castrado" asp-items="ViewBag.EscolhaBinaria" class="form-control"></select>
                 <span asp-validation-for="Castrado" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Falecido" class="control-label"></label>
-                <input asp-for="Falecido" class="form-control" />
+                <select asp-for="Falecido" asp-items="ViewBag.EscolhaBinaria" class="form-control"></select>
                 <span asp-validation-for="Falecido" class="text-danger"></span>
             </div>
 

@@ -19,12 +19,8 @@ namespace Models
 
         [Display(Name = "Data de Aplicação")]
         [DataType(DataType.DateTime, ErrorMessage = "Data válida requerida.")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(ApplyFormatInEditMode = true)]
         public DateTime DataAplicacao { get; set; }
-
-        [Display(Name = "Horário")]
-        [DataType(DataType.Time, ErrorMessage = "Horário válido requerido.")]
-        public TimeSpan Horario { get; set; }
 
         [Display(Name = "Dono")]
         [Required(ErrorMessage = "´Você precisa selecionar um dono.")]
