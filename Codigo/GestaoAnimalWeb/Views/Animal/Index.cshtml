@@ -4,11 +4,11 @@
     ViewData["Title"] = "Animais";
 }
 
-<h1>Animais</h1>
-
-<p>
-    <a asp-action="Create">Criar Novo Animal</a>
-</p>
+<h1 class="section-title">Animais</h1>
+<hr />
+<a asp-action="Create" class="new-item-button">
+    <i class="fas fa-plus-circle"></i> Novo Animal
+</a>
 <table class="table">
     <thead>
         <tr>
@@ -37,48 +37,49 @@
                 Pessoa
             </th>
             <th>
-               Organização
+                Organização
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdAnimal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EspecieAnimal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Raca)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataNascimento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sexo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Peso)
-            </td>
-           
-            <td>
-                <!--AQUI SERÁ DADOS DA PESSOA-->
-            </td>
-            <td>
-               <!--AQUI SERÁ DADOS DA ORGANIZAÇÃO-->
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Edit", new {id=item.IdAnimal }) |
-                @Html.ActionLink("Consultar", "Details", new { id = item.IdAnimal }) |
-                @Html.ActionLink("Deletar", "Delete", new { id = item.IdAnimal })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdAnimal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EspecieAnimal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Raca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataNascimento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sexo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Peso)
+                </td>
+
+                <td>
+                    <!--AQUI SERÁ DADOS DA PESSOA-->
+                </td>
+                <td>
+                    <!--AQUI SERÁ DADOS DA ORGANIZAÇÃO-->
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.IdAnimal }) |
+                    @Html.ActionLink("Consultar", "Details", new { id = item.IdAnimal }) |
+                    @Html.ActionLink("Deletar", "Delete", new { id = item.IdAnimal })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
