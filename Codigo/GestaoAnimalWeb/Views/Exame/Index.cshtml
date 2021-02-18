@@ -4,11 +4,12 @@
     ViewData["Title"] = "Exames";
 }
 
-<h1>Exames</h1>
+<h1 class="section-title">Exames</h1>
+<hr />
+<a asp-action="Create" class="new-item-button">
+    <i class="fas fa-plus-circle"></i> Novo Exame
+</a>
 
-<p>
-    <a asp-action="Create">Criar novo</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -37,35 +38,36 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdExame)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Data)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Observacoes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Consulta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Animal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TipoExame)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Edit", new { id=item.IdExame }) |
-                @Html.ActionLink("Detalhes", "Details", new { id = item.IdExame }) |
-                @Html.ActionLink("Deletar", "Delete", new { id = item.IdExame })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdExame)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Observacoes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Consulta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Animal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoExame)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.IdExame }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.IdExame }) |
+                    @Html.ActionLink("Deletar", "Delete", new { id = item.IdExame })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
