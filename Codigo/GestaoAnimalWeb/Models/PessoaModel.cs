@@ -1,10 +1,7 @@
-﻿using Core;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace Models
 {
@@ -41,6 +38,8 @@ namespace Models
         [Required (ErrorMessage = "Sexo não pode estar vazio")]
         public string Sexo { get; set; }
         public byte? Ativo { get; set; }
+
+        [Display(Name = "Tipo Pessoa")]
         public string TipoPessoa { get; set; }
         public string Cnpj { get; set; }
         public string Crmv { get; set; }
