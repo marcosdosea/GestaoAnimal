@@ -11,5 +11,6 @@ namespace Core
         public int IdAnimal { get; set; }
         public int IdPessoa { get; set; }
         public string Animal { get; set; }
+        public string Pessoa { get; set; }
     }
 }

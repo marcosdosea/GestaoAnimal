@@ -14,7 +14,7 @@
             @Html.HiddenFor(model => model.IdAgendamento)
             <div class="form-group">
                 <label asp-for="Frequencia" class="control-label"></label>
-                <input asp-for="Frequencia" class="form-control" />
+                <select asp-for="Frequencia" asp-items="ViewBag.Frequencias" class="form-control"></select>
                 <span asp-validation-for="Frequencia" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -29,7 +29,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Intervalo" class="control-label"></label>
-                <input asp-for="Intervalo" class="form-control" />
+                <select asp-for="Intervalo" asp-items="ViewBag.Intervalos" class="form-control"></select>
                 <span asp-validation-for="Intervalo" class="text-danger"></span>
             </div>
             <div class="form-group">

@@ -21,12 +21,12 @@ namespace Models
 
         [Display(Name = "Data de Início")]
         [DataType(DataType.DateTime, ErrorMessage = "Data válida requerida.")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)]
         public DateTime? DataInicio { get; set; }
 
         [Display(Name = "Data de Término")]
         [DataType(DataType.DateTime, ErrorMessage = "Data válida requerida.")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)]
         public DateTime? DataTermino { get; set; }
 
         [Required(ErrorMessage = "Intervalo não pode estar vazio.")]

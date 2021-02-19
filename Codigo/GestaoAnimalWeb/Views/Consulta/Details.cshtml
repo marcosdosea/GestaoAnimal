@@ -4,22 +4,21 @@
     ViewData["Title"] = "Detalhes";
 }
 
-<h1>Detalhes</h1>
+<h1 class="section-title">Consultar Consulta</h1>
+<hr />
 
 <div>
-    
-    <hr />
     <dl class="row">
         <dt class="col-sm-2">
             Descrição
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Descricao)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Data)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Data)
         </dd>
         <dt class="col-sm-2">
@@ -28,21 +27,21 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Preco)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.IdAnimal)
         </dt>
         <dd class="col-sm-10">
             @ViewBag.Animal
         </dd>
-        <dt class = "col-sm-2">
-           Dono
+        <dt class="col-sm-2">
+            Dono
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdPessoa)
+        <dd class="col-sm-10">
+            @ViewBag.Pessoa
         </dd>
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Editar", "Edit", new {id = Model.IdConsulta}) |
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IdConsulta }) |
     <a asp-action="Index">voltar à lista</a>
 </div>

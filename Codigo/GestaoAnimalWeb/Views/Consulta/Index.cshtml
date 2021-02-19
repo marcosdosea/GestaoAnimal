@@ -3,25 +3,26 @@
     ViewData["Title"] = "Consultas";
 }
 
-<h1>Consultas</h1>
+<h1 class="section-title">Consultas</h1>
+<hr />
 
-<p>
-    <a asp-action="Create">Nova Consulta</a>
-</p>
+<a asp-action="Create" class="new-item-button">
+    <i class="fas fa-plus-circle"></i> Nova Consulta
+</a>
 <table class="table">
     <thead>
         <tr>
             <th>
-               Descrição
+                Descrição
             </th>
             <th>
-               Data
+                Data
             </th>
             <th>
-               Preço
+                Preço
             </th>
             <th>
-               Animal
+                Animal
             </th>
             <th>
                 Dono
@@ -50,7 +51,7 @@
                 @Html.DisplayFor(modelItem => item.Animal)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdPessoa)
+                @Html.DisplayFor(modelItem => item.Pessoa)
             </td>
             <td>
                 @Html.ActionLink("Editar", "Edit", new { id=item.IdConsulta }) |

@@ -14,9 +14,9 @@ namespace Core
         public string Status { get; set; }
         public byte? Castrado { get; set; }
         public byte? Falecido { get; set; }
-        public string NomePessoa { get; set; }
-        public string NomeOrganizacao { get; set; }
+        public string Organizacao { get; set; }
         public string EspecieAnimal { get; set; }
-        //public int IdLote { get; set; }
+        public string Pessoa { get; set; }
+        public int IdLote { get; set; }
     }
 }
