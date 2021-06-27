@@ -7,7 +7,7 @@ using Models;
 using System;
 using System.Collections.Generic;
 
-namespace GestaoAnimalWeb.Controllers
+namespace Controllers
 {
     public class MedicamentoController : Controller
     {
