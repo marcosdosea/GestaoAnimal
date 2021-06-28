@@ -49,15 +49,58 @@ namespace Service.Tests
                 new Aplicamedicamento {
                     IdAplicaMedicamento = 3,
                     IdMedicamento = 2,
-                    IdAnimal = 3, 
-                    IdPessoa = 2,
+                    IdAnimal = 2, 
+                    IdPessoa = 1,
                     DataAplicacao = DateTime.Parse("2021-03-04 13:00:00"),
                     Dosagem = "200 mg",
                     Observacoes = "Utilizado como medida preventiva."
                 },
             };
 
+            var medicamentos = new List<Medicamento>
+            {
+                new Medicamento {
+                    IdMedicamento = 1,
+                    Nome = "M1"
+                },
+                new Medicamento {
+                    IdMedicamento = 2,
+                    Nome = "M2"
+                },
+                new Medicamento {
+                    IdMedicamento = 3,
+                    Nome = "Floral"
+                },
+            };
+
+            var animais = new List<Animal>
+            {
+                new Animal
+                {
+                    IdAnimal = 1,
+                    Nome = "Totó"
+                },
+                new Animal
+                {
+                    IdAnimal = 2,
+                    Nome = "Belinha"
+                }
+            };
+
+            var pessoas = new List<Pessoa>
+            {
+                new Pessoa {
+                    IdPessoa = 1,
+                    Nome = "Joana",
+                    DataNascimento =
+                    DateTime.Parse("1992-06-06")
+                }
+            };
+
             context.AddRange(aplicacoesMedicamento);
+            context.AddRange(medicamentos);
+            context.AddRange(animais);
+            context.AddRange(pessoas);
             context.SaveChanges();
 
             aplicaMedicamentoService = new AplicaMedicamentoService(context);
@@ -114,11 +157,13 @@ namespace Service.Tests
             Assert.AreEqual(1, apMedicamento.IdAnimal);
         }
 
+        /*
         [TestMethod()]
         public void ObterPorNomeOrdenadoDescendingTest()
         {
             Assert.Fail();
         }
+        */
 
         [TestMethod()]
         public void ObterTodosTest()
@@ -132,11 +177,13 @@ namespace Service.Tests
             Assert.AreEqual("12 mg", listaAplicacoes.First().Dosagem);
         }
 
+        /*
         [TestMethod()]
         public void ObterTodosPorNomeTest()
         {
             Assert.Fail();
         }
+        */
 
     }
 }
