@@ -60,8 +60,8 @@ namespace Service
         }
         public void Remover(int idOrganizacao)
         {
-            var _organizacao = _context.Animal.Find(idOrganizacao);
-            _context.Animal.Remove(_organizacao);
+            var _organizacao = _context.Organizacao.Find(idOrganizacao);
+            _context.Organizacao.Remove(_organizacao);
             _context.SaveChanges();
         }
         public IEnumerable<OrganizacaoDTO> ObterTodosPorNome(string nome)
