@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 
-namespace GestaoAnimalWeb.Controllers
+namespace Controllers
 {
     public class AplicaMedicamentoController : Controller
     {
