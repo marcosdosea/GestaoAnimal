@@ -810,6 +810,191 @@
       ],
       "value": "M"
     }]
+  }, {
+    "id": "31f88a3c-7d01-4275-ac10-eaa9ae82d2ac",
+    "name": "EditarConsultaValida",
+    "commands": [{
+      "id": "662606e3-17f3-4e9e-ab64-8673d79fbb39",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "84b17a65-dcf0-4b14-baa5-8974ba30a784",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1317x709",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0abb5b41-78a0-4324-bb5c-38da53d0b452",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.display-4",
+      "targets": [
+        ["css=.display-4", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Página Inicial - Gestão Animal')]", "xpath:innerText"]
+      ],
+      "value": "Página Inicial - Gestão Animal"
+    }, {
+      "id": "c3bbc7c0-60e3-4326-91fe-086681bbe76b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Consulta",
+      "targets": [
+        ["linkText=Consulta", "linkText"],
+        ["css=.list-group-item:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Consulta')]", "xpath:link"],
+        ["xpath=//div[@id='sidebar-wrapper']/div/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Consulta')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Consulta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7523edb5-770e-4f52-9d81-5bf30153f3a0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Editar",
+      "targets": [
+        ["linkText=Editar", "linkText"],
+        ["css=td > a:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Editar')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Consulta/Edit/6')]", "xpath:href"],
+        ["xpath=//td[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Editar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a1c8c2ba-daa9-4cfd-a910-ffe16709af3c",
+      "comment": "",
+      "command": "click",
+      "target": "id=IdAnimal",
+      "targets": [
+        ["id=IdAnimal", "id"],
+        ["name=IdAnimal", "name"],
+        ["css=#IdAnimal", "css:finder"],
+        ["xpath=//select[@id='IdAnimal']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Francisco\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nPedro')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "22055ff8-ec0b-4c5c-888c-9b4fdbcec808",
+      "comment": "",
+      "command": "select",
+      "target": "id=IdAnimal",
+      "targets": [],
+      "value": "label=Pedro"
+    }, {
+      "id": "811a64be-d212-4469-96c9-2b31c4e7cf8d",
+      "comment": "",
+      "command": "click",
+      "target": "id=IdAnimal",
+      "targets": [
+        ["id=IdAnimal", "id"],
+        ["name=IdAnimal", "name"],
+        ["css=#IdAnimal", "css:finder"],
+        ["xpath=//select[@id='IdAnimal']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Francisco\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nPedro')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "27431bdc-3c50-4358-9e1a-fa8653bbc296",
+      "comment": "",
+      "command": "click",
+      "target": "id=Preco",
+      "targets": [
+        ["id=Preco", "id"],
+        ["name=Preco", "name"],
+        ["css=#Preco", "css:finder"],
+        ["xpath=//input[@id='Preco']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "af6d63ed-f15a-4f53-8c6a-fc28a39e7469",
+      "comment": "",
+      "command": "type",
+      "target": "id=Preco",
+      "targets": [
+        ["id=Preco", "id"],
+        ["name=Preco", "name"],
+        ["css=#Preco", "css:finder"],
+        ["xpath=//input[@id='Preco']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "500"
+    }, {
+      "id": "eca7b26b-4a52-43b4-ba68-5512b78c6ad1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//input[@value='Salvar']", "xpath:attributes"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0bf2a99b-f6c8-40c4-9c7e-1243280bc981",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=td:nth-child(1)",
+      "targets": [
+        ["css=td:nth-child(1)", "css:finder"],
+        ["xpath=//td", "xpath:position"],
+        ["xpath=//td[contains(.,'Ultrasson')]", "xpath:innerText"]
+      ],
+      "value": "Ultrasson"
+    }, {
+      "id": "e97ff6e7-d4a4-439a-9697-bedf0979168e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=td:nth-child(2)",
+      "targets": [
+        ["css=td:nth-child(2)", "css:finder"],
+        ["xpath=//td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'08/05/2020 00:00:00')]", "xpath:innerText"]
+      ],
+      "value": "08/05/2020 00:00:00"
+    }, {
+      "id": "a4e46ac9-ec78-489f-a727-6a191593da20",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=td:nth-child(3)",
+      "targets": [
+        ["css=td:nth-child(3)", "css:finder"],
+        ["xpath=//td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'500 R$')]", "xpath:innerText"]
+      ],
+      "value": "500 R$"
+    }, {
+      "id": "1caac270-9c42-4a29-a70b-ca2622fc830f",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=td:nth-child(4)",
+      "targets": [
+        ["css=td:nth-child(4)", "css:finder"],
+        ["xpath=//td[4]", "xpath:position"],
+        ["xpath=//td[contains(.,'Pedro')]", "xpath:innerText"]
+      ],
+      "value": "Pedro"
+    }, {
+      "id": "652c280c-05b7-42d3-9fc5-a516d466927a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=td:nth-child(5)",
+      "targets": [
+        ["css=td:nth-child(5)", "css:finder"],
+        ["xpath=//td[5]", "xpath:position"],
+        ["xpath=//td[contains(.,'Isabela')]", "xpath:innerText"]
+      ],
+      "value": "Isabela"
+    }]
   }],
   "suites": [{
     "id": "4cc700e1-a14a-4eaf-bff7-4cfd56c45b15",
