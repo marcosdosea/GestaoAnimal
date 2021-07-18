@@ -296,7 +296,7 @@ CREATE TABLE `organizacao` (
   `endereco` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`idOrganizacao`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -305,7 +305,7 @@ CREATE TABLE `organizacao` (
 
 LOCK TABLES `organizacao` WRITE;
 /*!40000 ALTER TABLE `organizacao` DISABLE KEYS */;
-INSERT INTO `organizacao` VALUES (1,'1231',NULL,NULL,'Anjos de Patas',NULL,NULL,NULL),(2,'1241',NULL,NULL,'Bichos e etc',NULL,'Rua João Paulo','bichoseetc@gmail');
+INSERT INTO `organizacao` VALUES (1,'1231',NULL,NULL,'Anjos de Patas',NULL,NULL,NULL),(2,'1241',NULL,NULL,'Bichos e etc',NULL,'Rua João Paulo','bichoseetc@gmail'),(8,'8621','2021-06-30',NULL,'Gatos e Cachorros','88888-7765','Rua José Carlos Marchado, 123','gatosecachorros@outlook.com'),(9,'8621','2021-06-30',NULL,'Gatos e Cachorros','88888-7765','Rua José Carlos Marchado, 123','gatosecachorros@outlook.com');
 /*!40000 ALTER TABLE `organizacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -340,7 +340,7 @@ CREATE TABLE `pessoa` (
 
 LOCK TABLES `pessoa` WRITE;
 /*!40000 ALTER TABLE `pessoa` DISABLE KEYS */;
-INSERT INTO `pessoa` VALUES (1,'Lys','flordelys@gmail','2654','São José','999988776','11100099977',NULL,'F',NULL,NULL,NULL,NULL),(3,'Isabela','isa.bela@gmail.com','1234','Rua B, 405','123456789','04400077820',NULL,'F',1,NULL,NULL,NULL),(6,'Miguel','miguelanjo@gmail','12345','Rua Carlos Augusto, 1392','99999-9999','1234567','1999-02-22','M',NULL,'A',NULL,NULL);
+INSERT INTO `pessoa` VALUES (1,'Lys','flordelys@gmail','2654','São José','999988776','11100099977',NULL,'F',NULL,NULL,NULL,NULL),(3,'Isabela','isa.bela@gmail.com','1234','Rua B, 405','123456789','04400077820',NULL,'F',1,NULL,NULL,NULL),(6,'José Miguel','miguelanjo@gmail','12345','Rua Carlos Augusto, 1392','99831-1938','1234567',NULL,'M',NULL,'A',NULL,NULL);
 /*!40000 ALTER TABLE `pessoa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -412,4 +412,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-09 15:37:17
+-- Dump completed on 2021-07-09 16:07:46

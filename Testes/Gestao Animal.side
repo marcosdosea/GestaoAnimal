@@ -557,7 +557,7 @@
         ["xpath=//tr[3]/td", "xpath:position"],
         ["xpath=//td[contains(.,'8')]", "xpath:innerText"]
       ],
-      "value": "7"
+      "value": "8"
     }, {
       "id": "7c332b97-05fa-4212-9d16-8f802f753e15",
       "comment": "",
