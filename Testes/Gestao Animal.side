@@ -995,6 +995,819 @@
       ],
       "value": "Isabela"
     }]
+  }, {
+    "id": "79d99b1a-fadd-4b67-b782-8a42c83f1022",
+    "name": "InserirMedicamentoValido",
+    "commands": [{
+      "id": "0504ee07-dc58-4bee-aa60-753695138d57",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c1ca1d3b-2db9-413f-b0a4-fd788d3c22be",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1051x739",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d96938db-5bb3-4cc5-9d8d-2bcf0a880ac3",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Medicamentos",
+      "targets": [
+        ["linkText=Medicamentos", "linkText"],
+        ["css=.list-group-item:nth-child(6)", "css:finder"],
+        ["xpath=//a[contains(text(),'Medicamentos')]", "xpath:link"],
+        ["xpath=//div[@id='sidebar-wrapper']/div/a[6]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Medicamento')]", "xpath:href"],
+        ["xpath=//a[6]", "xpath:position"],
+        ["xpath=//a[contains(.,'Medicamentos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "66220d4f-d853-49c0-a374-1f7af61d5003",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fas",
+      "targets": [
+        ["css=.fas", "css:finder"],
+        ["xpath=//div[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "346f53b0-4a5b-4725-bdc5-8216f4ad8231",
+      "comment": "",
+      "command": "click",
+      "target": "id=Nome",
+      "targets": [
+        ["id=Nome", "id"],
+        ["name=Nome", "name"],
+        ["css=#Nome", "css:finder"],
+        ["xpath=//input[@id='Nome']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9ab45d2-4c6f-483f-a80e-9355b7a48212",
+      "comment": "",
+      "command": "type",
+      "target": "id=Nome",
+      "targets": [
+        ["id=Nome", "id"],
+        ["name=Nome", "name"],
+        ["css=#Nome", "css:finder"],
+        ["xpath=//input[@id='Nome']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Flotril"
+    }, {
+      "id": "1b63a726-e97f-4bc1-88c4-721669760e83",
+      "comment": "",
+      "command": "click",
+      "target": "id=IdEspecieAnimal",
+      "targets": [
+        ["id=IdEspecieAnimal", "id"],
+        ["name=IdEspecieAnimal", "name"],
+        ["css=#IdEspecieAnimal", "css:finder"],
+        ["xpath=//select[@id='IdEspecieAnimal']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Cachorro\nCoelho\nGato\nTartaruga')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe7d3970-6dd3-49f5-9483-491c412fb96a",
+      "comment": "",
+      "command": "click",
+      "target": "id=IdEspecieAnimal",
+      "targets": [
+        ["id=IdEspecieAnimal", "id"],
+        ["name=IdEspecieAnimal", "name"],
+        ["css=#IdEspecieAnimal", "css:finder"],
+        ["xpath=//select[@id='IdEspecieAnimal']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Cachorro\nCoelho\nGato\nTartaruga')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "05fd8262-d046-4d34-a4d5-6b9b3d0e722f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//input[@value='Criar']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "477cf07b-a2be-4d56-b057-2b4de0856610",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) > td:nth-child(1)",
+      "targets": [
+        ["css=tr:nth-child(2) > td:nth-child(1)", "css:finder"],
+        ["xpath=//tr[2]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Flotril')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f5675233-d995-476c-af25-89483194b3a8",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(2) > td:nth-child(1)",
+      "targets": [
+        ["css=tr:nth-child(2) > td:nth-child(1)", "css:finder"],
+        ["xpath=//tr[2]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Flotril')]", "xpath:innerText"]
+      ],
+      "value": "Flotril"
+    }, {
+      "id": "c47c1bbd-ea68-4d28-985b-fdbba78bd8d0",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) > td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(2) > td:nth-child(2)", "css:finder"],
+        ["xpath=//tr[2]/td[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8509df6f-d8d9-48f9-910d-9d63b82fcea6",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(2) > td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(2) > td:nth-child(2)", "css:finder"],
+        ["xpath=//tr[2]/td[2]", "xpath:position"]
+      ],
+      "value": "Cachorro"
+    }, {
+      "id": "3087f918-3283-440c-9b9d-45c1fa306a27",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "e625700f-4fd4-4be6-b84e-4102d3b4bfc9",
+    "name": "InserirMedicamentoInvalido",
+    "commands": [{
+      "id": "39f60658-312a-49d5-ba08-489897e9e9d8",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1d3435d6-652d-454a-afba-d6192492dca8",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1105x755",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7cfdad63-f125-4ab2-a832-179f5db7f31d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Medicamentos",
+      "targets": [
+        ["linkText=Medicamentos", "linkText"],
+        ["css=.list-group-item:nth-child(6)", "css:finder"],
+        ["xpath=//a[contains(text(),'Medicamentos')]", "xpath:link"],
+        ["xpath=//div[@id='sidebar-wrapper']/div/a[6]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Medicamento')]", "xpath:href"],
+        ["xpath=//a[6]", "xpath:position"],
+        ["xpath=//a[contains(.,'Medicamentos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0bfaa8ef-d960-443c-b78b-5c4bba782441",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Novo Medicamento",
+      "targets": [
+        ["linkText=Novo Medicamento", "linkText"],
+        ["css=.new-item-button", "css:finder"],
+        ["xpath=//a[contains(@href, '/Medicamento/Create')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Novo Medicamento')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6e37ca50-41a1-42a4-aeab-74530d8d49bb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.section-title",
+      "targets": [
+        ["css=.section-title", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Novo Medicamento')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5bae52cd-627c-485b-8a99-e8e8b99889d9",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.section-title",
+      "targets": [
+        ["css=.section-title", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Novo Medicamento')]", "xpath:innerText"]
+      ],
+      "value": "Novo Medicamento"
+    }, {
+      "id": "5a6813b6-5b1b-4059-82df-829157ab85a7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//input[@value='Criar']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "23293f8d-2cdb-434a-a4ad-52236d02bcbe",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-group:nth-child(1)",
+      "targets": [
+        ["css=.form-group:nth-child(1)", "css:finder"],
+        ["xpath=//form/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa34691d-e13d-462b-adde-26e327809e7e",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=Nome-error",
+      "targets": [
+        ["id=Nome-error", "id"],
+        ["css=#Nome-error", "css:finder"],
+        ["xpath=//span[@id='Nome-error']", "xpath:attributes"],
+        ["xpath=//span/span", "xpath:position"]
+      ],
+      "value": "O nome do medicamento é obrigatório."
+    }, {
+      "id": "56daa696-2fcd-473a-8c8e-db35548db7d1",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "2ecbf2a2-7fea-48b3-8cb2-777f083b3794",
+    "name": "ExcluirMedicamentoValido",
+    "commands": [{
+      "id": "7de5a431-d2f7-473d-ae80-3d6c1d42cf98",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f5da30ba-58d9-4206-b137-95d0c398ca79",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ec7bf5cf-6f4c-4b93-b491-eeee43c7c6cb",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Medicamentos",
+      "targets": [
+        ["linkText=Medicamentos", "linkText"],
+        ["css=.list-group-item:nth-child(6)", "css:finder"],
+        ["xpath=//a[contains(text(),'Medicamentos')]", "xpath:link"],
+        ["xpath=//div[@id='sidebar-wrapper']/div/a[6]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Medicamento')]", "xpath:href"],
+        ["xpath=//a[6]", "xpath:position"],
+        ["xpath=//a[contains(.,'Medicamentos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f1384614-9812-4412-8ee4-439c7315a102",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) a:nth-child(3)",
+      "targets": [
+        ["css=tr:nth-child(2) a:nth-child(3)", "css:finder"],
+        ["xpath=(//a[contains(text(),'Deletar')])[2]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Medicamento/Delete/3')]", "xpath:href"],
+        ["xpath=//tr[2]/td[3]/a[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cddbbd04-3782-44be-92f4-146330ee9082",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-sm-10:nth-child(2)",
+      "targets": [
+        ["css=.col-sm-10:nth-child(2)", "css:finder"],
+        ["xpath=//dd", "xpath:position"],
+        ["xpath=//dd[contains(.,'Flotril')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9de6b3f2-b3c1-461f-808c-a8a241b1e528",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.col-sm-10:nth-child(2)",
+      "targets": [
+        ["css=.col-sm-10:nth-child(2)", "css:finder"],
+        ["xpath=//dd", "xpath:position"],
+        ["xpath=//dd[contains(.,'Flotril')]", "xpath:innerText"]
+      ],
+      "value": "Flotril"
+    }, {
+      "id": "a09abcc7-aa33-4d75-8f3a-042c15455dcf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-sm-10:nth-child(4)",
+      "targets": [
+        ["css=.col-sm-10:nth-child(4)", "css:finder"],
+        ["xpath=//dd[2]", "xpath:position"],
+        ["xpath=//dd[contains(.,'Cachorro')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3d55407b-7778-4dc1-8702-c50fb7d144df",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.col-sm-10:nth-child(4)",
+      "targets": [
+        ["css=.col-sm-10:nth-child(4)", "css:finder"],
+        ["xpath=//dd[2]", "xpath:position"],
+        ["xpath=//dd[contains(.,'Cachorro')]", "xpath:innerText"]
+      ],
+      "value": "Cachorro"
+    }, {
+      "id": "e1462df3-0103-4fa6-9294-022d1fbbf5f2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//input[@value='Remover']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bab37b9b-1353-4e89-9b11-9032aa8ae362",
+      "comment": "",
+      "command": "click",
+      "target": "css=.section-title",
+      "targets": [
+        ["css=.section-title", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Medicamentos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d300232-83ab-4296-9b33-19ed0d44f06f",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.section-title",
+      "targets": [
+        ["css=.section-title", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Medicamentos')]", "xpath:innerText"]
+      ],
+      "value": "Medicamentos"
+    }, {
+      "id": "c88bae1f-4390-4b6d-aa89-271a3f3f246e",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "58bb850c-659c-444b-a81b-5a816783c511",
+    "name": "ExcluirMedicamentoInvalido",
+    "commands": [{
+      "id": "e2f6914c-b80f-478f-a7da-6fd68233de2b",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8837c846-bc53-48ab-b238-52e046e20d08",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1051x739",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "206631cb-0b5f-487b-90e1-aafa6238d961",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Medicamentos",
+      "targets": [
+        ["linkText=Medicamentos", "linkText"],
+        ["css=.list-group-item:nth-child(6)", "css:finder"],
+        ["xpath=//a[contains(text(),'Medicamentos')]", "xpath:link"],
+        ["xpath=//div[@id='sidebar-wrapper']/div/a[6]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Medicamento')]", "xpath:href"],
+        ["xpath=//a[6]", "xpath:position"],
+        ["xpath=//a[contains(.,'Medicamentos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c458b1a5-96fa-43ca-8977-5a8414e27248",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Deletar",
+      "targets": [
+        ["linkText=Deletar", "linkText"],
+        ["css=tr:nth-child(1) a:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Deletar')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Medicamento/Delete/1')]", "xpath:href"],
+        ["xpath=//td[3]/a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Deletar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1224ae6f-f4a5-4e74-ac2f-e1a54e69a6ed",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Voltar a lista",
+      "targets": [
+        ["linkText=Voltar a lista", "linkText"],
+        ["css=form > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Voltar a lista')]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/Medicamento')])[2]", "xpath:href"],
+        ["xpath=//form/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Voltar a lista')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cdc716fe-b84d-4ed4-8304-335afa5ce35f",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "db575970-2a03-4bcd-9ce7-83d638c92412",
+    "name": "InserirExameValido",
+    "commands": [{
+      "id": "cf34f573-f5e9-4368-bb33-345f4085cab5",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "87fb6997-cb4b-4511-97dc-0996451a63bb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1093x757",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "55f66bb7-dec0-48bd-a18a-d1bc3481b8a4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Exame",
+      "targets": [
+        ["linkText=Exame", "linkText"],
+        ["css=.list-group-item:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Exame')]", "xpath:link"],
+        ["xpath=//div[@id='sidebar-wrapper']/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Exame')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Exame')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f56c916-3972-4488-8de5-c7599775da52",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Novo Exame",
+      "targets": [
+        ["linkText=Novo Exame", "linkText"],
+        ["css=.new-item-button", "css:finder"],
+        ["xpath=//a[contains(@href, '/Exame/Create')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Novo Exame')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "23167a29-e0df-4301-8ef2-e408d860cb77",
+      "comment": "",
+      "command": "click",
+      "target": "id=Descricao",
+      "targets": [
+        ["id=Descricao", "id"],
+        ["name=Descricao", "name"],
+        ["css=#Descricao", "css:finder"],
+        ["xpath=//input[@id='Descricao']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9919690-a8c2-4674-92ec-bdb29b2ad5f5",
+      "comment": "",
+      "command": "type",
+      "target": "id=Descricao",
+      "targets": [
+        ["id=Descricao", "id"],
+        ["name=Descricao", "name"],
+        ["css=#Descricao", "css:finder"],
+        ["xpath=//input[@id='Descricao']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Realização de Ultrasson no animal"
+    }, {
+      "id": "915f3578-7493-4e91-88b3-06ce29ad9702",
+      "comment": "",
+      "command": "click",
+      "target": "id=Data",
+      "targets": [
+        ["id=Data", "id"],
+        ["name=Data", "name"],
+        ["css=#Data", "css:finder"],
+        ["xpath=//input[@id='Data']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "02b57541-7bdf-49ab-88ab-075e4b74f9be",
+      "comment": "",
+      "command": "type",
+      "target": "id=Data",
+      "targets": [
+        ["id=Data", "id"],
+        ["name=Data", "name"],
+        ["css=#Data", "css:finder"],
+        ["xpath=//input[@id='Data']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "0002-03-02"
+    }, {
+      "id": "6c683f91-f7e3-48f3-b1b9-c6cb9fac17c0",
+      "comment": "",
+      "command": "type",
+      "target": "id=Data",
+      "targets": [
+        ["id=Data", "id"],
+        ["name=Data", "name"],
+        ["css=#Data", "css:finder"],
+        ["xpath=//input[@id='Data']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "0020-03-02"
+    }, {
+      "id": "ab89c5df-498c-4677-bc3c-7bbc4bc23a46",
+      "comment": "",
+      "command": "type",
+      "target": "id=Data",
+      "targets": [
+        ["id=Data", "id"],
+        ["name=Data", "name"],
+        ["css=#Data", "css:finder"],
+        ["xpath=//input[@id='Data']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "0202-03-02"
+    }, {
+      "id": "e7a77219-a71f-43ec-b6bc-099102abc195",
+      "comment": "",
+      "command": "type",
+      "target": "id=Data",
+      "targets": [
+        ["id=Data", "id"],
+        ["name=Data", "name"],
+        ["css=#Data", "css:finder"],
+        ["xpath=//input[@id='Data']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "2020-03-02"
+    }, {
+      "id": "e0e5c3d4-e38f-4157-8718-838cbd6fbc71",
+      "comment": "",
+      "command": "click",
+      "target": "id=Observacoes",
+      "targets": [
+        ["id=Observacoes", "id"],
+        ["name=Observacoes", "name"],
+        ["css=#Observacoes", "css:finder"],
+        ["xpath=//input[@id='Observacoes']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac069e65-9713-48b5-9b9e-1144e8b622b5",
+      "comment": "",
+      "command": "type",
+      "target": "id=Observacoes",
+      "targets": [
+        ["id=Observacoes", "id"],
+        ["name=Observacoes", "name"],
+        ["css=#Observacoes", "css:finder"],
+        ["xpath=//input[@id='Observacoes']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "Resultado dentro esperado. Tudo Ok!"
+    }, {
+      "id": "9ee5b73a-722f-496f-a400-5ed70e361fc4",
+      "comment": "",
+      "command": "click",
+      "target": "id=IdConsulta",
+      "targets": [
+        ["id=IdConsulta", "id"],
+        ["name=IdConsulta", "name"],
+        ["css=#IdConsulta", "css:finder"],
+        ["xpath=//select[@id='IdConsulta']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Ultrasson')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "43309891-c26f-4025-8749-4d8e1d0f49f4",
+      "comment": "",
+      "command": "click",
+      "target": "id=IdConsulta",
+      "targets": [
+        ["id=IdConsulta", "id"],
+        ["name=IdConsulta", "name"],
+        ["css=#IdConsulta", "css:finder"],
+        ["xpath=//select[@id='IdConsulta']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Ultrasson')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "881b6415-ecb4-429e-8de5-a91555a39846",
+      "comment": "",
+      "command": "click",
+      "target": "id=IdAnimal",
+      "targets": [
+        ["id=IdAnimal", "id"],
+        ["name=IdAnimal", "name"],
+        ["css=#IdAnimal", "css:finder"],
+        ["xpath=//select[@id='IdAnimal']", "xpath:attributes"],
+        ["xpath=//div[5]/select", "xpath:position"],
+        ["xpath=//select[contains(.,'Francisco\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nPedro')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b906b7a-4fc2-4889-aa61-feef494d56db",
+      "comment": "",
+      "command": "click",
+      "target": "id=IdAnimal",
+      "targets": [
+        ["id=IdAnimal", "id"],
+        ["name=IdAnimal", "name"],
+        ["css=#IdAnimal", "css:finder"],
+        ["xpath=//select[@id='IdAnimal']", "xpath:attributes"],
+        ["xpath=//div[5]/select", "xpath:position"],
+        ["xpath=//select[contains(.,'Francisco\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nBob\nPedro')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0be75db5-8fd6-4232-ae17-526d2e5f6595",
+      "comment": "",
+      "command": "click",
+      "target": "id=IdTipoExame",
+      "targets": [
+        ["id=IdTipoExame", "id"],
+        ["name=IdTipoExame", "name"],
+        ["css=#IdTipoExame", "css:finder"],
+        ["xpath=//select[@id='IdTipoExame']", "xpath:attributes"],
+        ["xpath=//div[6]/select", "xpath:position"],
+        ["xpath=//select[contains(.,'Hemograma')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f6ac150a-9c4e-44fa-9664-1cd6cc35ecb9",
+      "comment": "",
+      "command": "click",
+      "target": "id=IdTipoExame",
+      "targets": [
+        ["id=IdTipoExame", "id"],
+        ["name=IdTipoExame", "name"],
+        ["css=#IdTipoExame", "css:finder"],
+        ["xpath=//select[@id='IdTipoExame']", "xpath:attributes"],
+        ["xpath=//div[6]/select", "xpath:position"],
+        ["xpath=//select[contains(.,'Hemograma')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b02e542-754b-4617-a403-968023b7deb4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//input[@value='Criar']", "xpath:attributes"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "312dfdb3-15e4-456f-81bd-5d897fe021c0",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(2)",
+      "targets": [
+        ["css=td:nth-child(2)", "css:finder"],
+        ["xpath=//td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'Realização de Ultrasson no animal')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc90441d-7f23-4f85-b8b9-13b634466625",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=td:nth-child(2)",
+      "targets": [
+        ["css=td:nth-child(2)", "css:finder"],
+        ["xpath=//td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'Realização de Ultrasson no animal')]", "xpath:innerText"]
+      ],
+      "value": "Realização de Ultrasson no animal"
+    }, {
+      "id": "7a81e08c-5180-425e-9286-aeb822fc753b",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(5)",
+      "targets": [
+        ["css=td:nth-child(5)", "css:finder"],
+        ["xpath=//td[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5aaef069-e69d-4e05-a9a2-2a8c6dbc3cd4",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=td:nth-child(5)",
+      "targets": [
+        ["css=td:nth-child(5)", "css:finder"],
+        ["xpath=//td[5]", "xpath:position"]
+      ],
+      "value": "Ultrasson"
+    }, {
+      "id": "e7003c28-afe0-428d-ad24-41230fc4cf40",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(6)",
+      "targets": [
+        ["css=td:nth-child(6)", "css:finder"],
+        ["xpath=//td[6]", "xpath:position"],
+        ["xpath=//td[contains(.,'Francisco')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1706bf2a-cdc2-4ad0-b692-c9d8cbd81f17",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=td:nth-child(6)",
+      "targets": [
+        ["css=td:nth-child(6)", "css:finder"],
+        ["xpath=//td[6]", "xpath:position"],
+        ["xpath=//td[contains(.,'Francisco')]", "xpath:innerText"]
+      ],
+      "value": "Francisco"
+    }, {
+      "id": "a905887d-e3d9-4355-9faa-9aa7b50a6cc0",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(7)",
+      "targets": [
+        ["css=td:nth-child(7)", "css:finder"],
+        ["xpath=//td[7]", "xpath:position"],
+        ["xpath=//td[contains(.,'Hemograma')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8cb4dfd6-6358-433c-ad94-2a16af6fc459",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=td:nth-child(7)",
+      "targets": [
+        ["css=td:nth-child(7)", "css:finder"],
+        ["xpath=//td[7]", "xpath:position"],
+        ["xpath=//td[contains(.,'Hemograma')]", "xpath:innerText"]
+      ],
+      "value": "Hemograma"
+    }, {
+      "id": "a525418f-ee2a-4a8d-a195-a2de5b5e07b9",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "4cc700e1-a14a-4eaf-bff7-4cfd56c45b15",
@@ -1003,6 +1816,13 @@
     "parallel": false,
     "timeout": 300,
     "tests": ["5e867008-ade3-4562-a288-73031299bdb7"]
+  }, {
+    "id": "b57cf098-33c7-4b4d-8401-956d64116ff9",
+    "name": "Test Cases Erick",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["79d99b1a-fadd-4b67-b782-8a42c83f1022", "e625700f-4fd4-4be6-b84e-4102d3b4bfc9", "db575970-2a03-4bcd-9ce7-83d638c92412", "58bb850c-659c-444b-a81b-5a816783c511", "2ecbf2a2-7fea-48b3-8cb2-777f083b3794"]
   }],
   "urls": ["https://localhost:44366/"],
   "plugins": []
